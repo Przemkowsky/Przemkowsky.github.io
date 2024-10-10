@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oczy Podążające za Myszką</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .eye {
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .pupil {
+            width: 30px;
+            height: 30px;
+            background-color: #000;
+            border-radius: 50%;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="eye">
+    <div class="pupil"></div>
+</div>
+<div class="eye">
+    <div class="pupil"></div>
+</div>
+<script>
+    document.addEventListener('mousemove', (event) => {
+        const eyes = document.querySelectorAll('.eye');
+        eyes.forEach(eye => {
+            const rect = eye.getBoundingClientRect();
+            const eyeX = rect.left + rect.width / 2;
+            const eyeY = rect.top + rect.height / 2;
+            const angle = Math.atan2(event.clientY - eyeY, event.clientX - eyeX);
+            const pupil = eye.querySelector('.pupil');
+            const pupilX = Math.cos(angle) * 20;
+            const pupilY = Math.sin(angle) * 20;
+            pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+        });
+    });
+</script>
+</body>
+</html>
