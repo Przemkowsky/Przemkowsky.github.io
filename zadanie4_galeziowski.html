@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sposoby podłączania CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 20px;
+            border: 2px solid black;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+        }
+        strong {
+            font-weight: bold;
+        }
+        u {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sposoby podłączania CSS do kodu strony WWW</h1>
+
+    <table>
+        <tr>
+            <td>
+                <h3>1. Wewnętrzny arkusz stylów</h3>
+                <textarea readonly>
+<u><strong>Składnia:</strong></u>
+<style>
+    body {
+        color: red;
+    }
+</style>
+                </textarea>
+                <p><strong>Zastosowanie:</strong> Styl definiowany w sekcji <u>HTML</u> za pomocą tagu <strong>&lt;style&gt;</strong>.</p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <h3>2. Zewnętrzny arkusz stylów</h3>
+                <textarea readonly>
+<u><strong>Składnia:</strong></u>
+<link rel="stylesheet" href="style.css">
+                </textarea>
+                <p><strong>Zastosowanie:</strong> Styl definiowany w osobnym pliku CSS podłączanym za pomocą tagu <strong>&lt;link&gt;</strong>.</p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <h3>3. Styl inline</h3>
+                <textarea readonly>
+<u><strong>Składnia:</strong></u>
+<div style="color: red;">Tekst</div>
+                </textarea>
+                <p><strong>Zastosowanie:</strong> Styl definiowany bezpośrednio w tagu HTML za pomocą atrybutu <strong>style</strong>.</p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <h3>4. Styl dynamiczny w JavaScript</h3>
+                <textarea readonly>
+<u><strong>Składnia:</strong></u>
+document.body.style.color = "red";
+                </textarea>
+                <p><strong>Zastosowanie:</strong> Stylowanie elementów za pomocą kodu <u>JavaScript</u>.</p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <h3>5. Importowanie arkuszy stylów</h3>
+                <textarea readonly>
+<u><strong>Składnia:</strong></u>
+@import url("style.css");
+                </textarea>
+                <p><strong>Zastosowanie:</strong> Importowanie plików CSS wewnątrz innego arkusza stylów.</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
