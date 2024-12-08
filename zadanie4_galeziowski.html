@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sposoby podłączania stylów</title>
+    <title>Sposoby podłączania styli do strony</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 20px;
         }
         table {
             width: 100%;
@@ -20,12 +21,14 @@
         }
         th {
             background-color: #f2f2f2;
+            text-align: center;
         }
         .code {
             font-family: Consolas, monospace;
             background-color: #f9f9f9;
             padding: 10px;
             border: 1px solid #ddd;
+            white-space: pre-wrap;
         }
     </style>
 </head>
@@ -39,9 +42,9 @@
         <tr>
             <td>
                 <div class="code">
-                    &lt;head&gt;<br>
-                    &nbsp;&nbsp;&lt;link rel="Stylesheet" type="text/css" href="style.css" /&gt;<br>
-                    &lt;/head&gt;
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;link rel="Stylesheet" type="text/css" href="style.css" /&gt;<br>
+&lt;/head&gt;
                 </div>
             </td>
         </tr>
@@ -49,13 +52,14 @@
 
     <table>
         <tr>
-            <th>2) Styl lokalny inaczej (styl wpisany, liniowy, linijkowy, w linii)</th>
+            <th>2) Styl lokalny inaczej</th>
         </tr>
         <tr>
             <td>
                 <div class="code">
-                    &lt;selektor style="cecha1: wartość1; cecha2: wartość2; ..."&gt;...&lt;/selektor&gt;
+&lt;selektor style="cecha1: wartość1; cecha2: wartość2..."&gt;...&lt;/selektor&gt;
                 </div>
+                <p><strong>Opis:</strong> Dopisanie arkusza do wybranego bloku treści strony.</p>
             </td>
         </tr>
     </table>
@@ -67,12 +71,12 @@
         <tr>
             <td>
                 <div class="code">
-                    &lt;head&gt;<br>
-                    &nbsp;&nbsp;&lt;style type="text/css"&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;selektor1 { cecha: wartość; cecha2: wartość2; ... }<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;selektor2 { cecha: wartość; cecha2: wartość2; ... }<br>
-                    &nbsp;&nbsp;&lt;/style&gt;<br>
-                    &lt;/head&gt;
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;style type="text/css"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;selektor1 { cecha: wartość; cecha2: wartość2... }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;selektor2 { cecha: wartość; cecha2: wartość2... }<br>
+&nbsp;&nbsp;&lt;/style&gt;<br>
+&lt;/head&gt;
                 </div>
             </td>
         </tr>
@@ -85,11 +89,11 @@
         <tr>
             <td>
                 <div class="code">
-                    &lt;head&gt;<br>
-                    &nbsp;&nbsp;&lt;link rel="Stylesheet" type="text/css" href="style.css" title="Nazwa domyślna" /&gt;<br>
-                    &nbsp;&nbsp;&lt;link rel="Alternate stylesheet" type="text/css" href="style1.css" title="Nazwa 1" /&gt;<br>
-                    &nbsp;&nbsp;&lt;link rel="Alternate stylesheet" type="text/css" href="style2.css" title="Nazwa 2" /&gt;<br>
-                    &lt;/head&gt;
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;link rel="Stylesheet" type="text/css" href="style.css" title="Nazwa domyślna" /&gt;<br>
+&nbsp;&nbsp;&lt;link rel="Alternate stylesheet" type="text/css" href="style1.css" title="Nazwa 1" /&gt;<br>
+&nbsp;&nbsp;&lt;link rel="Alternate stylesheet" type="text/css" href="style2.css" title="Nazwa 2" /&gt;<br>
+&lt;/head&gt;
                 </div>
             </td>
         </tr>
@@ -102,9 +106,9 @@
         <tr>
             <td>
                 <div class="code">
-                    &lt;style type="text/css"&gt;<br>
-                    &nbsp;&nbsp;@import url("adres zewnętrznego arkusza stylów");<br>
-                    &lt;/style&gt;
+&lt;style type="text/css"&gt;<br>
+&nbsp;&nbsp;@import url(adres zewnętrznego arkusza stylów);<br>
+&lt;/style&gt;
                 </div>
             </td>
         </tr>
