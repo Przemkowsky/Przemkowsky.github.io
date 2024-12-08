@@ -1,30 +1,54 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl">
 <head>
- <meta charset="UTF-8">
-<META HTTP-EQUIV="content-type" CONTENT="text/html; CHARSET=iso-8859-2">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cechy modyfikowania formatowania</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<table width=95% border="1" align="center">
-<tr>
-<td width=18% align=center>
-<marquee bgcolor="red">Gałęziowski</marquee>
-<a href="http://www.kuratorium.gda.pl" target="strony">Kuratorium</a>
-<br>
-<a href="http://www.wp.pl" target="strony">Portal WP</a>
-<br>
-<a href="zadanie2_galeziowski.html" target="strony">Zadanie 2</a>
-<br>
-<a href="zadanie3_galeziowski.html" target="strony">Zadanie 3</a>
-</td>
-<td align=center><iframe width=650 height=650 name="strony" src="start.html" border="0"></iframe>
-</td>
-<td width=18% align=center>
-<marquee bgcolor="red">Gałęziowski</marquee>
-<br>
-<a href="start.html" target="strony">Start</a>
-<br>
-</td>
-</tr>
-</table>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Cechy modyfikowania formatowania w:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>w HTML</strong></td>
+                <td><strong>w CSS</strong></td>
+            </tr>
+            <tr>
+                <td>
+                    modyfikacja wyglądu elementów strony jest bardzo <strong>żmudna</strong> 
+                    (atrybuty i znaczniki które za to odpowiadają, są porozrzucane w różnych miejscach kodu, 
+                    mieszając się ze strukturą dokumentu).
+                </td>
+                <td>
+                    rozdzielenie <strong>struktury</strong> i <strong>prezentacji</strong> dokumentów czyli: 
+                    wszystkie polecenia dotyczące formatowania można umieścić w jednym miejscu 
+                    (tzw. arkuszu) i powiązać je z konkretnymi elementami, wstawionymi za pomocą 
+                    czystego (X)HTML. Taki sposób sprawia, że modyfikacja wyglądu stron może przebiegać dużo sprawniej.
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
