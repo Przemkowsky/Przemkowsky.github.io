@@ -10,9 +10,9 @@
             margin: 20px;
         }
         table {
-            width: 100%;
+            width: 80%; /* Zmniejszenie szerokości tabel */
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin: 20px auto;
         }
         th, td {
             border: 1px solid black;
@@ -25,7 +25,7 @@
         }
         textarea {
             width: 100%;
-            height: 60px;
+            height: 50px; /* Zmniejszona wysokość */
             border: none;
             background-color: #f9f9f9;
             font-family: Consolas, monospace;
@@ -45,8 +45,9 @@
     </style>
 </head>
 <body>
-    <h1>Temat: Sposoby podłączania CSS do kodu strony WWW</h1>
+    <h1 style="text-align: center;">Temat: Sposoby podłączania CSS do kodu strony WWW</h1>
 
+    <!-- Zewnętrzny arkusz stylów -->
     <table>
         <tr>
             <th>1) Zewnętrzny arkusz stylów</th>
@@ -58,11 +59,12 @@
     <link rel="Stylesheet" type="text/css" href="style.css" />
 </head>
                 </textarea>
-                <p class="description">Plik zewnętrzny zawierający style CSS, podłączany za pomocą znacznika `<link>` w sekcji `<head>`. Dzięki temu styl można stosować na wielu stronach.</p>
+                <p class="description">Styl zapisany w oddzielnym pliku, połączony z dokumentem HTML za pomocą znacznika `<link>` w sekcji `<head>`. Stosowany do ujednolicenia wyglądu na wielu stronach.</p>
             </td>
         </tr>
     </table>
 
+    <!-- Styl lokalny -->
     <table>
         <tr>
             <th>2) Styl lokalny inaczej</th>
@@ -72,11 +74,12 @@
                 <textarea readonly>
 <selektor style="cecha1: wartość1; cecha2: wartość2...">...</selektor>
                 </textarea>
-                <p class="description">Styl zapisany w atrybucie `style` konkretnego elementu HTML, stosowany tylko w tym miejscu.</p>
+                <p class="description">Styl przypisany bezpośrednio do elementu HTML za pomocą atrybutu `style`. Stosowany w specyficznych przypadkach, gdy zmiana dotyczy pojedynczego elementu.</p>
             </td>
         </tr>
     </table>
 
+    <!-- Wewnętrzny arkusz stylów -->
     <table>
         <tr>
             <th>3) Wewnętrzny arkusz stylów</th>
@@ -91,11 +94,12 @@
     </style>
 </head>
                 </textarea>
-                <p class="description">Style umieszczone w bloku `<style>` wewnątrz sekcji `<head>`, odnoszą się do całego dokumentu HTML.</p>
+                <p class="description">Style definiowane w dokumencie HTML w sekcji `<style>` w `<head>`. Używane w przypadku stylizacji pojedynczej strony.</p>
             </td>
         </tr>
     </table>
 
+    <!-- Alternatywny arkusz stylów -->
     <table>
         <tr>
             <th>4) Alternatywny arkusz stylów</th>
@@ -109,11 +113,12 @@
     <link rel="Alternate stylesheet" type="text/css" href="style2.css" title="Nazwa 2" />
 </head>
                 </textarea>
-                <p class="description">Zastosowanie alternatywnych stylów, które użytkownik może ręcznie wybrać w przeglądarce.</p>
+                <p class="description">Mechanizm pozwalający na załączenie wielu arkuszy stylów, z których użytkownik może wybrać jeden (np. ciemny lub jasny motyw).</p>
             </td>
         </tr>
     </table>
 
+    <!-- Import arkusza stylów -->
     <table>
         <tr>
             <th>5) Import arkusza stylów</th>
@@ -125,7 +130,7 @@
     @import url(adres zewnętrznego arkusza stylów);
 </style>
                 </textarea>
-                <p class="description">Styl importowany do wewnętrznego arkusza CSS za pomocą polecenia `@import`.</p>
+                <p class="description">Styl zewnętrzny załączony za pomocą polecenia `@import` w sekcji `<style>` lub zewnętrznym arkuszu CSS.</p>
             </td>
         </tr>
     </table>
