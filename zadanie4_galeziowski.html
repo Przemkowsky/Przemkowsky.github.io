@@ -3,51 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sposoby podłączania CSS do kodu strony WWW</title>
+    <title>Sposoby podłączania CSS do strony WWW</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+        /* Styl dla tabeli i tekstów */
         table {
-            width: 80%;
-            border-collapse: collapse;
-            margin: 20px auto;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
-        }
-        th {
-            background-color: #f2f2f2;
-            text-align: center;
-            font-weight: bold;
-        }
-        textarea {
             width: 100%;
-            height: 50px; /* Zmniejszona wysokość */
-            border: none;
-            background-color: #f9f9f9;
-            font-family: Consolas, monospace;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #000;
+        }
+
+        textarea {
+            width: 90%;
+            height: 80px;
+            margin-bottom: 10px;
+            font-family: monospace;
+            font-size: 14px;
+            padding: 5px;
+            border: 1px solid #000;
             resize: none;
-            padding: 10px;
-            border: 1px solid #ddd;
         }
-        .description {
-            margin-top: 10px;
-            font-style: italic;
-            color: #333;
-        }
+
         .important {
             font-weight: bold;
             text-decoration: underline;
         }
+
+        h2 {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Temat: Sposoby podłączania CSS do kodu strony WWW</h1>
+    <h2>Sposoby podłączania CSS do kodu strony WWW</h2>
 
-    <!-- Zewnętrzny arkusz stylów -->
     <table>
         <tr>
             <th>1) Zewnętrzny arkusz stylów</th>
@@ -59,28 +52,18 @@
     <link rel="Stylesheet" type="text/css" href="style.css" />
 </head>
                 </textarea>
-                <p class="description">Styl zapisany w osobnym pliku CSS, połączony z dokumentem HTML za pomocą znacznika <span class="important">&lt;link&gt;</span> w sekcji <span class="important">&lt;head&gt;</span>. Pozwala na stosowanie jednolitego wyglądu na wielu stronach.</p>
             </td>
         </tr>
-    </table>
-
-    <!-- Styl lokalny -->
-    <table>
         <tr>
-            <th>2) Styl lokalny inaczej</th>
+            <th>2) Styl lokalny inaczej (styl wpisany, liniowy, linijkowy, w linii)</th>
         </tr>
         <tr>
             <td>
                 <textarea readonly>
 <selektor style="cecha1: wartość1; cecha2: wartość2...">...</selektor>
                 </textarea>
-                <p class="description">Styl przypisany bezpośrednio do elementu HTML za pomocą atrybutu <span class="important">style</span>. Używany głównie do jednorazowych zmian w wyglądzie elementu. Jest najważniejszy w hierarchii kaskadowości.</p>
             </td>
         </tr>
-    </table>
-
-    <!-- Wewnętrzny arkusz stylów -->
-    <table>
         <tr>
             <th>3) Wewnętrzny arkusz stylów</th>
         </tr>
@@ -94,13 +77,8 @@
     </style>
 </head>
                 </textarea>
-                <p class="description">Style zdefiniowane wewnątrz dokumentu HTML w sekcji <span class="important">&lt;style&gt;</span>. Stosowane do nadania wyglądu tylko jednej stronie, gdy zewnętrzny arkusz nie jest potrzebny.</p>
             </td>
         </tr>
-    </table>
-
-    <!-- Alternatywny arkusz stylów -->
-    <table>
         <tr>
             <th>4) Alternatywny arkusz stylów</th>
         </tr>
@@ -113,13 +91,8 @@
     <link rel="Alternate stylesheet" type="text/css" href="style2.css" title="Nazwa 2" />
 </head>
                 </textarea>
-                <p class="description">Mechanizm pozwala użytkownikowi na wybór pomiędzy różnymi wersjami stylów (np. jasnym lub ciemnym motywem). Wymaga przypisania tytułów arkuszy stylów.</p>
             </td>
         </tr>
-    </table>
-
-    <!-- Import arkusza stylów -->
-    <table>
         <tr>
             <th>5) Import arkusza stylów</th>
         </tr>
@@ -130,7 +103,6 @@
     @import url(adres zewnętrznego arkusza stylów);
 </style>
                 </textarea>
-                <p class="description">Styl importowany za pomocą reguły <span class="important">@import</span>, najczęściej stosowany w sekcji <span class="important">&lt;style&gt;</span> lub w innym zewnętrznym arkuszu CSS.</p>
             </td>
         </tr>
     </table>
