@@ -10,7 +10,7 @@
             margin: 20px;
         }
         table {
-            width: 80%; /* Zmniejszenie szerokości tabel */
+            width: 80%;
             border-collapse: collapse;
             margin: 20px auto;
         }
@@ -59,7 +59,7 @@
     <link rel="Stylesheet" type="text/css" href="style.css" />
 </head>
                 </textarea>
-                <p class="description">Styl zapisany w oddzielnym pliku, połączony z dokumentem HTML za pomocą znacznika `<link>` w sekcji `<head>`. Stosowany do ujednolicenia wyglądu na wielu stronach.</p>
+                <p class="description">Styl zapisany w osobnym pliku CSS, połączony z dokumentem HTML za pomocą znacznika <span class="important">&lt;link&gt;</span> w sekcji <span class="important">&lt;head&gt;</span>. Pozwala na stosowanie jednolitego wyglądu na wielu stronach.</p>
             </td>
         </tr>
     </table>
@@ -74,7 +74,7 @@
                 <textarea readonly>
 <selektor style="cecha1: wartość1; cecha2: wartość2...">...</selektor>
                 </textarea>
-                <p class="description">Styl przypisany bezpośrednio do elementu HTML za pomocą atrybutu `style`. Stosowany w specyficznych przypadkach, gdy zmiana dotyczy pojedynczego elementu.</p>
+                <p class="description">Styl przypisany bezpośrednio do elementu HTML za pomocą atrybutu <span class="important">style</span>. Używany głównie do jednorazowych zmian w wyglądzie elementu. Jest najważniejszy w hierarchii kaskadowości.</p>
             </td>
         </tr>
     </table>
@@ -94,7 +94,7 @@
     </style>
 </head>
                 </textarea>
-                <p class="description">Style definiowane w dokumencie HTML w sekcji `<style>` w `<head>`. Używane w przypadku stylizacji pojedynczej strony.</p>
+                <p class="description">Style zdefiniowane wewnątrz dokumentu HTML w sekcji <span class="important">&lt;style&gt;</span>. Stosowane do nadania wyglądu tylko jednej stronie, gdy zewnętrzny arkusz nie jest potrzebny.</p>
             </td>
         </tr>
     </table>
@@ -113,7 +113,7 @@
     <link rel="Alternate stylesheet" type="text/css" href="style2.css" title="Nazwa 2" />
 </head>
                 </textarea>
-                <p class="description">Mechanizm pozwalający na załączenie wielu arkuszy stylów, z których użytkownik może wybrać jeden (np. ciemny lub jasny motyw).</p>
+                <p class="description">Mechanizm pozwala użytkownikowi na wybór pomiędzy różnymi wersjami stylów (np. jasnym lub ciemnym motywem). Wymaga przypisania tytułów arkuszy stylów.</p>
             </td>
         </tr>
     </table>
@@ -130,7 +130,7 @@
     @import url(adres zewnętrznego arkusza stylów);
 </style>
                 </textarea>
-                <p class="description">Styl zewnętrzny załączony za pomocą polecenia `@import` w sekcji `<style>` lub zewnętrznym arkuszu CSS.</p>
+                <p class="description">Styl importowany za pomocą reguły <span class="important">@import</span>, najczęściej stosowany w sekcji <span class="important">&lt;style&gt;</span> lub w innym zewnętrznym arkuszu CSS.</p>
             </td>
         </tr>
     </table>
