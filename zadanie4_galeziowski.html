@@ -25,13 +25,18 @@
         }
         textarea {
             width: 100%;
-            height: 100px;
+            height: 60px;
             border: none;
             background-color: #f9f9f9;
             font-family: Consolas, monospace;
             resize: none;
             padding: 10px;
             border: 1px solid #ddd;
+        }
+        .description {
+            margin-top: 10px;
+            font-style: italic;
+            color: #333;
         }
         .important {
             font-weight: bold;
@@ -53,6 +58,7 @@
     <link rel="Stylesheet" type="text/css" href="style.css" />
 </head>
                 </textarea>
+                <p class="description">Plik zewnętrzny zawierający style CSS, podłączany za pomocą znacznika `<link>` w sekcji `<head>`. Dzięki temu styl można stosować na wielu stronach.</p>
             </td>
         </tr>
     </table>
@@ -66,7 +72,7 @@
                 <textarea readonly>
 <selektor style="cecha1: wartość1; cecha2: wartość2...">...</selektor>
                 </textarea>
-                <p><span class="important">Opis:</span> Styl wpisany bezpośrednio w atrybut HTML, przypisany do konkretnego elementu.</p>
+                <p class="description">Styl zapisany w atrybucie `style` konkretnego elementu HTML, stosowany tylko w tym miejscu.</p>
             </td>
         </tr>
     </table>
@@ -85,6 +91,7 @@
     </style>
 </head>
                 </textarea>
+                <p class="description">Style umieszczone w bloku `<style>` wewnątrz sekcji `<head>`, odnoszą się do całego dokumentu HTML.</p>
             </td>
         </tr>
     </table>
@@ -102,6 +109,7 @@
     <link rel="Alternate stylesheet" type="text/css" href="style2.css" title="Nazwa 2" />
 </head>
                 </textarea>
+                <p class="description">Zastosowanie alternatywnych stylów, które użytkownik może ręcznie wybrać w przeglądarce.</p>
             </td>
         </tr>
     </table>
@@ -117,6 +125,7 @@
     @import url(adres zewnętrznego arkusza stylów);
 </style>
                 </textarea>
+                <p class="description">Styl importowany do wewnętrznego arkusza CSS za pomocą polecenia `@import`.</p>
             </td>
         </tr>
     </table>
