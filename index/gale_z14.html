@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sposoby definiowania kolorów w CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sposoby definiowania kolorów w CSS</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sposób</th>
+                <th>Przykład</th>
+                <th>Opis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nazwa koloru</td>
+                <td>red, blue, green</td>
+                <td>Kolor określany za pomocą nazwy, np. red, blue, green.</td>
+            </tr>
+            <tr>
+                <td>RGB</td>
+                <td>rgb(255, 0, 0)</td>
+                <td>Określenie koloru za pomocą trzech składowych: czerwony, zielony, niebieski. Wartości od 0 do 255.</td>
+            </tr>
+            <tr>
+                <td>RGBA</td>
+                <td>rgba(255, 0, 0, 0.5)</td>
+                <td>Podobne do RGB, ale dodaje przezroczystość (alpha) w zakresie 0 (przezroczysty) do 1 (nieprzezroczysty).</td>
+            </tr>
+            <tr>
+                <td>HEX</td>
+                <td>#FF0000</td>
+                <td>Kolor określany za pomocą szesnastkowego kodu, np. #FF0000 dla czerwonego.</td>
+            </tr>
+            <tr>
+                <td>HSL</td>
+                <td>hsl(0, 100%, 50%)</td>
+                <td>Kolor określany za pomocą skali barw (Hue), nasycenia (Saturation) i jasności (Lightness).</td>
+            </tr>
+            <tr>
+                <td>HSLA</td>
+                <td>hsla(0, 100%, 50%, 0.5)</td>
+                <td>Podobnie jak HSL, ale dodaje przezroczystość (alpha).</td>
+            </tr>
+            <tr>
+                <td>CMYK</td>
+                <td>cmyk(0%, 100%, 100%, 0%)</td>
+                <td>Określanie koloru na podstawie modeli używanych w druku (Cyan, Magenta, Yellow, Black).</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
