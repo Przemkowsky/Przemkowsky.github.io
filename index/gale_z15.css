@@ -1,0 +1,32 @@
+/* Styl dla całego dokumentu */
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+}
+
+/* Styl dla tabeli */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Zmiana koloru tekstu w <p> */
+p {
+    color: #70AF5D;  /* Kolor z HEX: #70AF5D */
+}
+
+/* Zmiana koloru tekstu w <body> */
+body {
+    color: rgb(59%, 37%, 83%);  /* Kolor z RGB: rgb(59%, 37%, 83%) */
+}
