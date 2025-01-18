@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cechy modyfikowania formatowania</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Cechy modyfikowania formatowania w:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>w HTML</strong></td>
+                <td><strong>w CSS</strong></td>
+            </tr>
+            <tr>
+                <td>
+                    modyfikacja wyglądu elementów strony jest bardzo <strong>żmudna</strong> 
+                    (atrybuty i znaczniki które za to odpowiadają, są porozrzucane w różnych miejscach kodu, 
+                    mieszając się ze strukturą dokumentu).
+                </td>
+                <td>
+                    rozdzielenie <strong>struktury</strong> i <strong>prezentacji</strong> dokumentów czyli: 
+                    wszystkie polecenia dotyczące formatowania można umieścić w jednym miejscu 
+                    (tzw. arkuszu) i powiązać je z konkretnymi elementami, wstawionymi za pomocą 
+                    czystego (X)HTML. Taki sposób sprawia, że modyfikacja wyglądu stron może przebiegać dużo sprawniej.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
