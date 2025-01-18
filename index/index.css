@@ -1,6 +1,35 @@
-
-a.active::after {
-  content: ' →';
+/* Strzałka obok aktywnego linku */
+a.active::before {
+  content: '←'; /* Zmieniamy strzałkę na wskazującą w lewo */
   color: blue;
   font-weight: bold;
+  margin-right: 10px; /* Odstęp między strzałką a tekstem */
+}
+
+/* Style dla nagłówków i linków */
+h1 {
+  font-size: 2em;
+  text-align: center;
+  color: #333;
+}
+
+table {
+  width: 95%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+marquee {
+  font-weight: bold;
+}
+
+a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff6600;
+  text-decoration: underline;
 }
