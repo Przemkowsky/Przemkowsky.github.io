@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   links.forEach(link => {
     link.addEventListener('click', function() {
-      links.forEach(link => link.classList.remove('active')); 
+      links.forEach(link => link.classList.remove('active'));
       this.classList.add('active'); 
     });
   });
