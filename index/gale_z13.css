@@ -1,8 +1,10 @@
-
 body {
-    font-size: 36px;  /* Wartość 40mm + 4 litery nazwiska */
+color: blue;
+background-color: #C0C0C0;
+font-size: 45mm;
 }
 
 p {
-    font-size: 34px;  /* Wartość 30mm + 4 litery nazwiska */
+color: green;
+font-size: 35mm;
 }
