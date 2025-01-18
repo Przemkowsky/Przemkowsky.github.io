@@ -1,8 +1,9 @@
 
-li{
- font-size: 28px;
- 
- }
-ul{
-	font: Arial;
+li {
+    font-size: 28px;
+    margin-bottom: 10px; 
 }
+
+ul {
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px; 
