@@ -1,0 +1,6 @@
+
+a.active::after {
+  content: ' →';
+  color: blue;
+  font-weight: bold;
+}
