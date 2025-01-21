@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odpowiedzi na pytania</title>
+</head>
+<body>
+    <h1>Odpowiedzi na pytania</h1>
+
+    <h2>1. Na co pozwala styl lokalny, który element będzie formatowany z użyciem stylu lokalnego?</h2>
+    <p>Styl lokalny pozwala na formatowanie konkretnego elementu HTML. Jest używany bezpośrednio w tagu HTML lub w jego atrybucie <code>style</code>. Tylko ten element, który ma przypisany styl lokalny, będzie formatowany zgodnie z tymi ustawieniami.</p>
+
+    <h2>2. Składnia teoretyczna (z użyciem ramki otaczającej → może być tabela o jednej komórce, zastosuj „znaki specjalne” do napisania definicji stylu lokalnego tak, aby instrukcja CSS nie wykonywała się, a tylko wyświetlała wewnątrz ramki [&nbsp; spacja niełamana] przykład „znaku specjalnego”)</h2>
+    <table border="1">
+        <tr>
+            <td>
+                <p>Przykład definicji stylu lokalnego w CSS, pokazany jako tekst, aby instrukcja CSS nie była wykonywana:</p>
+                <pre>
+&lt;style&gt;
+    body {
+        background-color: lightblue;
+        font-size: 20px;
+    }
+&lt;/style&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+
+    <h2>3. Co może być selektorem?</h2>
+    <p>Selektorem w CSS może być:
+        <ul>
+            <li>nazwa tagu (np. <code>body</code>, <code>p</code>)</li>
+            <li>klasa (np. <code>.klasa</code>)</li>
+            <li>identyfikator (np. <code>#id</code>)</li>
+            <li>atrybut (np. <code>[type="text"]</code>)</li>
+            <li>pseudo-klasa (np. <code>:hover</code>)</li>
+            <li>pseudo-element (np. <code>::before</code>)</li>
+        </ul>
+    </p>
+
+    <h2>4. Co wypisujemy jako "cechę". Jakie jest znaczenie średników?</h2>
+    <p>"Cechą" w CSS jest właściwość, która określa sposób, w jaki elementy HTML mają być wyświetlane lub formatowane. Przykład cechy:</p>
+    <pre>
+body {
+    color: blue; 
+    font-size: 16px; 
+}
+    </pre>
+    <p>Średnik (;) w CSS jest używany do oddzielania poszczególnych właściwości w bloku stylu. Oznacza to, że każda cecha powinna być zakończona średnikiem, z wyjątkiem ostatniej cechy w danym bloku stylu, choć jej obecność jest zalecana, aby uniknąć błędów przy dodawaniu nowych cech.</p>
+
+    <h2>5. Co wypisujemy jako "wartość" (w deklaracji stylu)?</h2>
+    <p>"Wartość" w deklaracji stylu CSS to konkretna wartość przypisana do danej cechy. Określa ona, jak dany element ma wyglądać. Przykład wartości:</p>
+    <pre>
+body {
+    color: blue; 
+    font-size: 16px; 
+}
+    </pre>
+    <p>Wartość może być różnego typu, np. kolorem (np. <code>blue</code>), rozmiarem (np. <code>16px</code>), długością (np. <code>100px</code>), czy innymi danymi zależnymi od cechy.</p>
+
+</body>
+</html>
