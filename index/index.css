@@ -1,89 +1,106 @@
-/* Linki */
-a {
-  color: #0073e6; /* Niebieski kolor linków */
-  text-decoration: none; /* Bez podkreślenia */
-  padding: 8px 15px; /* Wewnętrzne odstępy */
-  display: inline-block;
-  border-radius: 8px; /* Zaokrąglone rogi */
-  transition: all 0.3s ease-in-out; /* Płynne przejścia */
+/* Strzałka przed aktywnym linkiem */
+a.active::before {
   font-weight: bold;
+  margin-right: 10px;
 }
 
-/* Hover na linkach */
-a:hover {
-  color: #ff6600; /* Pomarańczowy kolor tekstu */
-  background-color: #f0f0f0; /* Jasnoszare tło */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtelny cień */
-  transform: scale(1.05); /* Lekkie powiększenie */
+a.left-arrow::before {
+  content: '→'; /* Strzałka skierowana w prawo */
+  color: blue;
 }
 
-/* Link aktywny */
-a.active {
-  background-color: #0073e6; /* Niebieskie tło */
-  color: white; /* Biały tekst */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Cień aktywnego linku */
+a.right-arrow::before {
+  content: '←'; /* Strzałka skierowana w lewo */
+  color: blue;
 }
 
-/* Stylizacja tabeli */
+/* Nagłówki */
+h1 {
+  font-size: 2.5em; /* Większa czcionka */
+  text-align: center;
+  color: #333;
+  text-transform: uppercase; /* Wielkie litery */
+  margin-bottom: 20px;
+  letter-spacing: 2px; /* Odstępy między literami */
+}
+
+/* Tabela */
 table {
   width: 95%;
   margin: auto;
-  border-collapse: collapse; /* Usunięcie przerw między komórkami */
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Zaokrąglone rogi */
   overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtelny cień */
+  background-color: #fff; /* Białe tło tabeli */
 }
 
-/* Komórki tabeli */
+/* Styl dla komórek tabeli */
 td {
   padding: 10px;
   vertical-align: top;
 }
 
-/* Marquee */
+/* Styl dla marquee */
 marquee {
   font-weight: bold;
   font-size: 1.2em;
-  padding: 10px;
+  padding: 5px;
   color: white;
-  background-color: red;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  animation: marqueeGlow 1s infinite alternate; /* Efekt pulsowania */
+  background-color: red; /* Kolor tła */
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efekt uniesienia */
 }
 
-/* Efekt pulsowania dla marquee */
-@keyframes marqueeGlow {
-  from {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  to {
-    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.6);
-  }
+/* Linki */
+a {
+  color: #0073e6; /* Kolor linku */
+  text-decoration: none; /* Bez podkreślenia */
+  padding: 5px 10px; /* Wewnętrzne odstępy */
+  display: inline-block;
+  border-radius: 5px; /* Zaokrąglone rogi */
+  transition: all 0.3s ease-in-out; /* Animacja hover */
 }
 
-/* Styl dla przycisków (opcjonalnie) */
+/* Efekt hover dla linków */
+a:hover {
+  color: #ff6600; /* Pomarańczowy kolor tekstu */
+  text-decoration: underline; /* Podkreślenie tekstu */
+  background-color: #f0f0f0; /* Jasnoszare tło */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Delikatny cień */
+}
+
+/* Aktywny link */
+a.active {
+  background-color: #0073e6; /* Niebieskie tło */
+  color: white; /* Biały tekst */
+}
+
+/* Dodatkowy efekt hover dla aktywnych linków */
+a.active:hover {
+  background-color: #005bb5; /* Ciemniejszy niebieski */
+}
+
+/* Stylowanie przycisków w tabeli */
 button {
   font-size: 1em;
-  padding: 12px 24px;
+  padding: 10px 20px;
   margin: 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   color: white;
-  background-color: #0073e6;
+  background-color: #0073e6; /* Niebieskie przyciski */
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
+/* Efekt hover dla przycisków */
 button:hover {
-  background-color: #005bb5;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transform: scale(1.1);
+  background-color: #005bb5; /* Ciemniejszy niebieski na hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Cień podczas hover */
 }
 
-/* Animacja fadeIn */
+/* Dodatkowe animacje */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -96,5 +113,5 @@ button:hover {
 }
 
 table, h1, a {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.6s ease-out; /* Pojawianie się elementów na stronie */
 }
