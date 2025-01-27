@@ -1,42 +1,43 @@
-// Funkcja uruchamiana po załadowaniu całego DOM
+// Funkcja uruchamiana po załadowaniu DOM
 window.addEventListener('DOMContentLoaded', () => {
-  // Pobranie wszystkich linków na stronie
-  const links = document.querySelectorAll('a');
+  const links = document.querySelectorAll('a'); // Wszystkie linki
+  const iframe = document.querySelector('iframe'); // iFrame, jeśli istnieje
 
-  // Iteracja przez wszystkie linki
+  // Obsługa kliknięcia na link
   links.forEach(link => {
     link.addEventListener('click', function (event) {
-      // Usunięcie klas aktywności i strzałek z każdego linku
+      event.preventDefault(); // Zablokowanie domyślnego zachowania
+
+      // Usunięcie aktywnych klas
       links.forEach(link => {
-        link.classList.remove('active');
-        link.classList.remove('left-arrow');
-        link.classList.remove('right-arrow');
+        link.classList.remove('active', 'left-arrow', 'right-arrow');
       });
 
       // Dodanie klasy 'active' do klikniętego linku
       this.classList.add('active');
 
-      // Obliczenie pozycji linku w stosunku do szerokości ekranu
-      const linkPosition = this.getBoundingClientRect().left; // Pozycja linku
-      const screenWidth = window.innerWidth; // Szerokość okna przeglądarki
+      // Sprawdzenie pozycji linku w oknie
+      const linkPosition = this.getBoundingClientRect().left;
+      const screenWidth = window.innerWidth;
 
-      // Sprawdzenie pozycji linku i przypisanie odpowiedniej strzałki
       if (linkPosition < screenWidth / 3) {
-        this.classList.add('left-arrow'); // Link w lewej części
+        this.classList.add('left-arrow'); // Strzałka w prawo
       } else if (linkPosition > (2 * screenWidth) / 3) {
-        this.classList.add('right-arrow'); // Link w prawej części
-      } else {
-        this.classList.add('active'); // Środkowy link
+        this.classList.add('right-arrow'); // Strzałka w lewo
+      }
+
+      // Jeśli link otwiera stronę w iframe, ustaw źródło
+      if (iframe && this.getAttribute('href')) {
+        iframe.src = this.getAttribute('href');
       }
     });
   });
 
-  // Obsługa nawigacji klawiaturą
+  // Obsługa klawiatury: Poruszanie się po linkach
   document.addEventListener('keydown', (event) => {
     const activeLink = document.querySelector('a.active');
     let nextLink;
 
-    // Klawisze strzałek do góry i do dołu
     if (event.key === 'ArrowDown') {
       nextLink = activeLink ? activeLink.nextElementSibling : links[0];
     } else if (event.key === 'ArrowUp') {
@@ -48,10 +49,10 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Efekt fade-in całej strony
+  // Efekt pojawiania się
   document.body.style.opacity = '0';
   document.body.style.transition = 'opacity 0.5s ease-in-out';
-  setTimeout(() => {
+  window.setTimeout(() => {
     document.body.style.opacity = '1';
   }, 100);
 });
