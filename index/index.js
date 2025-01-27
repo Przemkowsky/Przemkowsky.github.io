@@ -1,27 +1,35 @@
-// Funkcja dodająca odpowiednią strzałkę do klikniętego linku
-window.addEventListener('DOMContentLoaded', (event) => {
+// Funkcja uruchamiana po załadowaniu całego DOM
+window.addEventListener('DOMContentLoaded', () => {
+  // Pobranie wszystkich linków na stronie
   const links = document.querySelectorAll('a');
 
+  // Iteracja przez wszystkie linki
   links.forEach(link => {
-    link.addEventListener('click', function() {
-      // Usuwa aktywność i strzałki z wszystkich linków
+    link.addEventListener('click', function (event) {
+      // Usunięcie klas aktywności i strzałek z każdego linku
       links.forEach(link => {
         link.classList.remove('active');
         link.classList.remove('left-arrow');
         link.classList.remove('right-arrow');
       });
 
-      // Dodaje klasę 'active' i strzałkę do klikniętego linku
+      // Dodanie klasy 'active' do klikniętego linku
       this.classList.add('active');
 
-      // Sprawdzenie, z której strony jest kliknięty link
-      const linkPosition = this.parentElement.getBoundingClientRect().left;
-      if (linkPosition < window.innerWidth / 2) {
-        // Link po lewej stronie: strzałka skierowana w prawo
+      // Obliczenie pozycji linku w stosunku do szerokości ekranu
+      const linkPosition = this.getBoundingClientRect().left; // Pozycja linku
+      const screenWidth = window.innerWidth; // Szerokość okna przeglądarki
+
+      // Sprawdzenie pozycji linku i przypisanie odpowiedniej strzałki
+      if (linkPosition < screenWidth / 3) {
+        // Link w lewej części ekranu
         this.classList.add('left-arrow');
-      } else {
-        // Link po prawej stronie: strzałka skierowana w lewo
+      } else if (linkPosition > (2 * screenWidth) / 3) {
+        // Link w prawej części ekranu
         this.classList.add('right-arrow');
+      } else {
+        // Link w środku – brak dodatkowych strzałek
+        this.classList.add('active');
       }
     });
   });
