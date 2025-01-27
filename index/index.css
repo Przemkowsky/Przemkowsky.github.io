@@ -1,4 +1,4 @@
-/* Strzałka przed tekstem linku */
+/* Strzałka przed aktywnym linkiem */
 a.active::before {
   font-weight: bold;
   margin-right: 10px;
@@ -14,30 +14,104 @@ a.right-arrow::before {
   color: blue;
 }
 
+/* Nagłówki */
 h1 {
-  font-size: 2em;
+  font-size: 2.5em; /* Większa czcionka */
   text-align: center;
   color: #333;
+  text-transform: uppercase; /* Wielkie litery */
+  margin-bottom: 20px;
+  letter-spacing: 2px; /* Odstępy między literami */
 }
 
+/* Tabela */
 table {
   width: 95%;
   margin: auto;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px; /* Zaokrąglone rogi */
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtelny cień */
+  background-color: #fff; /* Białe tło tabeli */
 }
 
+/* Styl dla komórek tabeli */
+td {
+  padding: 10px;
+  vertical-align: top;
+}
+
+/* Styl dla marquee */
 marquee {
   font-weight: bold;
+  font-size: 1.2em;
+  padding: 5px;
+  color: white;
+  background-color: red; /* Kolor tła */
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efekt uniesienia */
 }
 
+/* Linki */
 a {
-  color: #0073e6;
-  text-decoration: none;
+  color: #0073e6; /* Kolor linku */
+  text-decoration: none; /* Bez podkreślenia */
+  padding: 5px 10px; /* Wewnętrzne odstępy */
+  display: inline-block;
+  border-radius: 5px; /* Zaokrąglone rogi */
+  transition: all 0.3s ease-in-out; /* Animacja hover */
 }
 
+/* Efekt hover dla linków */
 a:hover {
-  color: #ff6600;
-  text-decoration: underline;
+  color: #ff6600; /* Pomarańczowy kolor tekstu */
+  text-decoration: underline; /* Podkreślenie tekstu */
+  background-color: #f0f0f0; /* Jasnoszare tło */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Delikatny cień */
 }
 
+/* Aktywny link */
+a.active {
+  background-color: #0073e6; /* Niebieskie tło */
+  color: white; /* Biały tekst */
+}
+
+/* Dodatkowy efekt hover dla aktywnych linków */
+a.active:hover {
+  background-color: #005bb5; /* Ciemniejszy niebieski */
+}
+
+/* Stylowanie przycisków w tabeli */
+button {
+  font-size: 1em;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #0073e6; /* Niebieskie przyciski */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efekt hover dla przycisków */
+button:hover {
+  background-color: #005bb5; /* Ciemniejszy niebieski na hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Cień podczas hover */
+}
+
+/* Dodatkowe animacje */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+table, h1, a {
+  animation: fadeIn 0.6s ease-out; /* Pojawianie się elementów na stronie */
+}
