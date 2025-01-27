@@ -22,15 +22,36 @@ window.addEventListener('DOMContentLoaded', () => {
 
       // Sprawdzenie pozycji linku i przypisanie odpowiedniej strzałki
       if (linkPosition < screenWidth / 3) {
-        // Link w lewej części ekranu
-        this.classList.add('left-arrow');
+        this.classList.add('left-arrow'); // Link w lewej części
       } else if (linkPosition > (2 * screenWidth) / 3) {
-        // Link w prawej części ekranu
-        this.classList.add('right-arrow');
+        this.classList.add('right-arrow'); // Link w prawej części
       } else {
-        // Link w środku – brak dodatkowych strzałek
-        this.classList.add('active');
+        this.classList.add('active'); // Środkowy link
       }
     });
   });
+
+  // Obsługa nawigacji klawiaturą
+  document.addEventListener('keydown', (event) => {
+    const activeLink = document.querySelector('a.active');
+    let nextLink;
+
+    // Klawisze strzałek do góry i do dołu
+    if (event.key === 'ArrowDown') {
+      nextLink = activeLink ? activeLink.nextElementSibling : links[0];
+    } else if (event.key === 'ArrowUp') {
+      nextLink = activeLink ? activeLink.previousElementSibling : links[links.length - 1];
+    }
+
+    if (nextLink) {
+      nextLink.click(); // Symulacja kliknięcia
+    }
+  });
+
+  // Efekt fade-in całej strony
+  document.body.style.opacity = '0';
+  document.body.style.transition = 'opacity 0.5s ease-in-out';
+  setTimeout(() => {
+    document.body.style.opacity = '1';
+  }, 100);
 });
