@@ -1,80 +1,60 @@
-/* Strzałka przed aktywnym linkiem */
-a.active::before {
+/* Linki */
+a {
+  color: #0073e6; /* Niebieski kolor linków */
+  text-decoration: none; /* Bez podkreślenia */
+  padding: 8px 15px; /* Wewnętrzne odstępy */
+  display: inline-block;
+  border-radius: 8px; /* Zaokrąglone rogi */
+  transition: all 0.3s ease-in-out; /* Płynne przejścia */
   font-weight: bold;
-  margin-right: 10px;
-  font-size: 1.2em; /* Większa czcionka */
 }
 
-a.left-arrow::before {
-  content: '→'; /* Strzałka skierowana w prawo */
-  color: blue;
-  font-weight: bold;
-  font-size: 1.2em;
-  animation: bounce 0.5s infinite alternate; /* Animacja podskakiwania */
+/* Hover na linkach */
+a:hover {
+  color: #ff6600; /* Pomarańczowy kolor tekstu */
+  background-color: #f0f0f0; /* Jasnoszare tło */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtelny cień */
+  transform: scale(1.05); /* Lekkie powiększenie */
 }
 
-a.right-arrow::before {
-  content: '←'; /* Strzałka skierowana w lewo */
-  color: blue;
-  font-weight: bold;
-  font-size: 1.2em;
-  animation: bounce 0.5s infinite alternate;
+/* Link aktywny */
+a.active {
+  background-color: #0073e6; /* Niebieskie tło */
+  color: white; /* Biały tekst */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Cień aktywnego linku */
 }
 
-/* Nagłówki */
-h1 {
-  font-size: 2.5em;
-  text-align: center;
-  color: #333;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-  animation: fadeIn 0.8s ease-in-out; /* Animacja pojawiania się nagłówka */
-}
-
-/* Efekty animacji */
-@keyframes bounce {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-5px);
-  }
-}
-
-/* Efekt fade-in dla tabel, linków i przycisków */
-table, h1, a, button {
-  animation: fadeIn 0.6s ease-out;
-}
-
-/* Styl tabel */
+/* Stylizacja tabeli */
 table {
   width: 95%;
   margin: auto;
-  border: 1px solid #ccc;
+  border-collapse: collapse; /* Usunięcie przerw między komórkami */
+  border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  transition: transform 0.3s ease-in-out; /* Efekt skalowania */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-table:hover {
-  transform: scale(1.02); /* Subtelne powiększenie tabeli przy najechaniu */
+/* Komórki tabeli */
+td {
+  padding: 10px;
+  vertical-align: top;
 }
 
-/* Styl dla marquee */
+/* Marquee */
 marquee {
   font-weight: bold;
   font-size: 1.2em;
-  padding: 5px;
+  padding: 10px;
   color: white;
   background-color: red;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  animation: marqueeGlow 1s infinite alternate; /* Pulsowanie */
+  animation: marqueeGlow 1s infinite alternate; /* Efekt pulsowania */
 }
 
+/* Efekt pulsowania dla marquee */
 @keyframes marqueeGlow {
   from {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -84,13 +64,13 @@ marquee {
   }
 }
 
-/* Przyciski */
+/* Styl dla przycisków (opcjonalnie) */
 button {
   font-size: 1em;
-  padding: 10px 20px;
+  padding: 12px 24px;
   margin: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   color: white;
   background-color: #0073e6;
   cursor: pointer;
@@ -99,6 +79,22 @@ button {
 
 button:hover {
   background-color: #005bb5;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transform: scale(1.1);
+}
+
+/* Animacja fadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+table, h1, a {
+  animation: fadeIn 0.5s ease-in-out;
 }
