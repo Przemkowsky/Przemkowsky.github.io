@@ -1,0 +1,172 @@
+/* Globalny styl strony */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9f1f7; /* Bardzo jasny błękit */
+    margin: 0;
+    padding: 0;
+    color: #2c3e50; /* Kolor czcionki - ciemnoszary */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Styl galerii z animacją */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animacja fadeIn */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styl dla obrazków w etapie 1-5 */
+.image-left-right {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    justify-content: flex-start;  /* Dodane dla ustawienia obok */
+}
+
+/* Styl dla obrazków */
+.image-left-right img {
+    width: 60%;  /* Zwiększenie szerokości obrazu */
+    max-width: 700px;  /* Maksymalna szerokość obrazu */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.8s ease-in-out;
+    margin-right: 20px; /* Przerwa między zdjęciem a opisem */
+}
+
+/* Efekt na zdjęciu */
+.image-left-right img:hover {
+    transform: scale(1.05);
+}
+
+/* Opis zdjęcia z ładną czcionką */
+p {
+    font-size: 18px;
+    font-family: 'Verdana', sans-serif;
+    color: #34495e;
+    text-align: left;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+/* Przycisk na każdej stronie oprócz ostatniego */
+button {
+    padding: 14px 30px;
+    font-size: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    align-self: center; /* Centrowanie przycisku obok zdjęcia */
+}
+
+/* Efekt po najechaniu na przycisk */
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-5px);
+}
+
+/* Styl dla obrazków na etapie 6 */
+.double-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.double-image img {
+    width: 48%;  /* Zwiększenie szerokości obrazów na etapie 6 */
+    max-width: 750px;  /* Maksymalna szerokość obrazów */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 1s ease-in-out;
+}
+
+/* Animacja dla obrazków przy przejściu */
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Dodanie animacji do zdjęć */
+.double-image img:nth-child(1) {
+    animation: slideFromLeft 1s ease-out;
+}
+
+.double-image img:nth-child(2) {
+    animation: slideFromRight 1s ease-out;
+}
+
+/* Przyciski na stronie 6 nie są wyświetlane */
+.no-button {
+    display: none;
+}
+
+/* Styl dla obrazków w etapie 2 */
+#etap2 .image-left-right img {
+    width: 40%;  /* Zmniejszenie szerokości obrazu w etapie 2 */
+    max-width: 450px;  /* Maksymalna szerokość obrazu w etapie 2 */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.8s ease-in-out;
+    margin-right: 20px; /* Przerwa między zdjęciem a opisem */
+}
+
+#etap2 .image-left-right button {
+    margin-top: 0; /* Przycisk będzie obok zdjęcia */
+}
+
+/* Styl dla obrazków w etapie 5 */
+#etap5 .image-left-right img {
+    width: 40%;  /* Zmniejszenie szerokości obrazu w etapie 5 */
+    max-width: 450px;  /* Maksymalna szerokość obrazu w etapie 5 */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.8s ease-in-out;
+    margin-right: 20px; /* Przerwa między zdjęciem a opisem */
+}
+
+#etap5 .image-left-right button {
+    margin-top: 0; /* Przycisk będzie obok zdjęcia */
+}
