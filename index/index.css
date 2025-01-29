@@ -62,26 +62,24 @@ a {
   transition: all 0.3s ease-in-out; /* Animacja hover */
 }
 
-/* Efekt hover dla linków */
-a:hover {
-  color: #ff6600; /* Pomarańczowy kolor tekstu */
-  text-decoration: underline; /* Podkreślenie tekstu */
-  background-color: #f0f0f0; /* Jasnoszare tło */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Delikatny cień */
-}
-
 /* Aktywny link */
 a.active {
   background-color: #0073e6; /* Niebieskie tło */
   color: white; /* Biały tekst */
 }
 
-/* Dodatkowy efekt hover dla aktywnych linków */
-a.active:hover {
-  background-color: #005bb5; /* Ciemniejszy niebieski */
+/* Strzałka w lewo i w prawo */
+a.left-arrow::before {
+  content: '→'; /* Strzałka skierowana w prawo */
+  color: blue;
 }
 
-/* Strzałka w lewo i w prawo */
+a.right-arrow::before {
+  content: '←'; /* Strzałka skierowana w lewo */
+  color: blue;
+}
+
+/* Efekty hover dla strzałek */
 a:hover.left-arrow::before {
   content: '←'; /* Strzałka skierowana w lewo */
   color: blue;
@@ -90,23 +88,4 @@ a:hover.left-arrow::before {
 a:hover.right-arrow::before {
   content: '→'; /* Strzałka skierowana w prawo */
   color: blue;
-}
-
-/* Stylowanie przycisków w tabeli */
-button {
-  font-size: 1em;
-  padding: 10px 20px;
-  margin: 10px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  background-color: #0073e6; /* Niebieskie przyciski */
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Efekt hover dla przycisków */
-button:hover {
-  background-color: #005bb5; /* Ciemniejszy niebieski na hover */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Cień podczas hover */
 }
