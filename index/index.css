@@ -81,6 +81,17 @@ a.active:hover {
   background-color: #005bb5; /* Ciemniejszy niebieski */
 }
 
+/* Strzałka w lewo i w prawo */
+a:hover.left-arrow::before {
+  content: '←'; /* Strzałka skierowana w lewo */
+  color: blue;
+}
+
+a:hover.right-arrow::before {
+  content: '→'; /* Strzałka skierowana w prawo */
+  color: blue;
+}
+
 /* Stylowanie przycisków w tabeli */
 button {
   font-size: 1em;
