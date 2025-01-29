@@ -1,0 +1,25 @@
+body {
+    background-image: url('delorine.jpg');
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+.red-text {
+    color: red;
+}
+
+.center {
+    text-align: center;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff6600;
+}
