@@ -1,14 +1,18 @@
 /* Strzałka przed aktywnym linkiem */
 a.active::before {
+  content: '→'; /* Strzałka skierowana w prawo */
   font-weight: bold;
   margin-right: 10px;
+  color: blue;
 }
 
+/* Strzałka w lewo dla linków w lewej części ekranu */
 a.left-arrow::before {
   content: '→'; /* Strzałka skierowana w prawo */
   color: blue;
 }
 
+/* Strzałka w prawo dla linków w prawej części ekranu */
 a.right-arrow::before {
   content: '←'; /* Strzałka skierowana w lewo */
   color: blue;
@@ -66,17 +70,6 @@ a {
 a.active {
   background-color: #0073e6; /* Niebieskie tło */
   color: white; /* Biały tekst */
-}
-
-/* Strzałka w lewo i w prawo */
-a.left-arrow::before {
-  content: '→'; /* Strzałka skierowana w prawo */
-  color: blue;
-}
-
-a.right-arrow::before {
-  content: '←'; /* Strzałka skierowana w lewo */
-  color: blue;
 }
 
 /* Efekty hover dla strzałek */
