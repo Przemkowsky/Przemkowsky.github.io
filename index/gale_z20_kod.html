@@ -8,22 +8,26 @@
 <textarea rows="18" cols="80" readonly>
 <html>
 <head>
+    <meta charset="utf-8">
 </head>
 <body>
-<div style="background-color: silver">
-<span style="color: red">
-<b>To jest pogrubienie w ramach DIV oraz SPAN i dlatego jest czerwone na żółtym tle</b>,
-a to jest zwykły tekst - również wewnątrz DIV i SPAN.
-</span>
-To jest zwykły tekst, ale tylko wewnątrz DIV - dlatego nie jest czerwony, ale ma żółte tło.
-<p style="color: red; font-size: 40px;">A to jest akapit (element blokowy) w ramach DIV.</p>
+<div style="background-color: #FFFDD0; width: 100%; height: 40%; font-size: 20px">
+    <p><span style="color: orange">P jest kolorem pomarańczowym<br><br>wielkością 20 punktów<br><br>i czcionką Arial<br><br>Informatyka to nauka o komputerach, programowaniu i danych. Napędza technologię i cyfrowy świat.</span></p>
 </div>
-<span style="color: green; font-size: 25px;"> <b>To jest pogrubienie (element wyświetlany w linii) w ramach SPAN</b>, a to jest zwykły tekst - również wewnątrz span. </span>
-<ol>
-<li style="color: rgb(166, 0, 250); "><span style="color: black; ">Punkt pierwszy</span></li>
-<li style="color: rgb(255, 0, 255); "><span style="color: black; ">Punkt drugi</span></li>
-<li style="color: rgb(159, 219, 239); "><span style="color: black; ">Punkt trzeci</span></li>
-</ol>
+<br>
+<div style="background-color: magenta; width: 80%; height: 15%">
+    <i><span style="color: green; font-style: italic; font-size: 20pt; font-weight: bold">I jest pogrubione</span></i>
+    <strike><span style="color: red; text-decoration: line-throuhg; text-decoration-color: red; font-size: 20pt;">Strike jest przekreślone kolorem czerwonym</span></strike>
+    <u><span style="color: purple; text-decoration: underline; font-size: 20pt; text-decoration: overline">U ma nadkreślenie bo może :)</span></u>
+</div>
+<div style="background-color: #9ACD32; width: 100%; height: 30%">
+    <h1><span style="color: blue; font-size: 30pt; text-decoration: underline">Nagłówek poziomu 1. jest podkreślony dlatego, że lubi</span></h1>
+    <ol>
+        <li style="color: blue; font-size: 25pt;">Punk pierwszy jest zawsze pierwszy</li>
+        <li style="color: red; font-size: 20pt">Punkt drugi może być drugi</li>
+        <li style="color: gray; font-size: 15pt">Punkt trzeci jest ostatni</li>
+    </ol>
+</div>
 </body>
 </html>
 </textarea>
