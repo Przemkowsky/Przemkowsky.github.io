@@ -1,1 +1,15 @@
+p {
+color: red;
+font-size: 22pt;  
+}
 
+#gruby_galeziowski {
+  color: green;
+  font-size: 17pt;
+}
+
+#dlawszystkich {
+  color: yellow;
+  font-size: 10pt;
+  font-family: Arial;
+}
