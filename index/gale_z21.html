@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 21</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        p {
+            color: green;
+            font-size: 14pt;
+        }
+        p#pochyly {
+            font-style: italic;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+<h1>Identyfikatory — ID</h1>
+<table>
+    <tr>
+        <th>Pojęcie</th>
+        <th>Opis</th>
+    </tr>
+    <tr>
+        <td>Co znaczy skrót ID?</td>
+        <td>ID oznacza identyfikator unikalnego elementu w dokumencie HTML.</td>
+    </tr>
+    <tr>
+        <td>Jaki jest cel stosowania ID?</td>
+        <td>ID pozwala na jednoznaczne identyfikowanie i stylizowanie elementu.</td>
+    </tr>
+    <tr>
+        <td>Jakie jest znaczenie znaku #?</td>
+        <td>Znak # oznacza identyfikator w CSS, np. #nazwa_id.</td>
+    </tr>
+    <tr>
+        <td>Jak następuje wywołanie ID?</td>
+        <td>W HTML: id="nazwa_id". W CSS: #nazwa_id { właściwości }</td>
+    </tr>
+    <tr>
+        <td>Uwagi na temat stosowania ID</td>
+        <td>
+            <ul>
+                <li>ID musi być unikalne w obrębie jednej strony.</li>
+                <li>Błędem jest wielokrotne użycie tego samego ID, ale nie wpływa to na działanie strony.</li>
+                <li>Jeśli element może wystąpić wiele razy, lepiej używać klasy (class) zamiast ID.</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<h2>Przykład użycia ID</h2>
+<p>Blok tekstu o kolorze zielonym i czcionce 14pt</p>
+<p id="pochyly">Blok tekstu o kolorze zielonym i czcionce 20pt</p>
+<p>Blok tekstu o kolorze zielonym i czcionce 14pt</p>
+</body>
+</html>
 
+<!-- Twoje imię i nazwisko -->

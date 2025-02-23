@@ -1,0 +1,39 @@
+p#pogrubienie_galeziowski {
+    font-size: 25px + 11px;
+    color: #7D32C8;
+    font-weight: bold;
+}
+
+p#pochylona_galeziowski {
+    font-size: 30px + 11px;
+    color: #E19464;
+    font-style: italic;
+}
+
+p#index_gorny_galeziowski {
+    font-size: 0.5cm + 0.1cm * 11;
+    color: #91A4D8;
+    vertical-align: super;
+}
+
+p#index_dolny_galeziowski {
+    font-size: 0.5cm + 0.2cm * 11;
+    color: #2D82D9;
+    vertical-align: sub;
+}
+
+p#mono_galeziowski {
+    font-size: 35px + 11px;
+    color: #11B464;
+    font-family: "Courier New", Courier, monospace;
+}
+
+p#powiekszenie_galeziowski {
+    color: #4B86D3;
+    font-size: 20px;
+}
+
+p#pomniejszenie_galeziowski {
+    color: #B57A32;
+    font-size: 12px;
+}
