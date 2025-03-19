@@ -1,0 +1,118 @@
+div#border_gale
+{
+	width: 100%;
+	border: 2px black solid;
+}
+p#tytul1_gale
+{
+	text-align:center;
+	font-size:1cm;
+	color:red;
+}
+
+p#akapit1_gale
+{
+	text-align:center;
+	font-size:1cm;
+	color:blue;
+}
+
+p#zdaniepierwsze_gale
+{
+	text-align:center;
+    font-style:Italic;
+	font-weight: 400;
+	font-size: xx-small;
+	font-family: Serif;
+	color: deeppink;
+	text-indent: 3cm;
+	line-height: 1,2cm;
+	word-spacing: 9px;
+	letter-spacing:3ex;
+}
+
+p#zdaniedrugie_gale
+{
+	text-align:center;
+	text-decoration: overline;
+	text-transform: lowercase;
+	font-weight: 600;
+	font-size: medium;
+	font-family: Serif;
+	color:hotpink;
+	text-indent: 3cm;
+	line-height: 1,2cm;
+	word-spacing: 9px;
+	letter-spacing:3ex;
+}
+
+p#zdanietrzecie_gale
+{
+	text-align:center;
+	font-weight: 800;
+	font-size: xx-large;
+	font-family: Serif;
+	color: pink;
+	text-indent: 3cm;
+	line-height: 1,2cm;
+	word-spacing: 9px;
+	letter-spacing:3ex;
+
+	
+}
+
+p#tytul2_gale
+{
+	text-align:left;
+	font-size:3em;
+	color:red;
+}
+
+p#akapit2_gale
+{
+	text-align:left;
+	font-size:3em;
+	color:blue;
+}
+p#zdaniepierwsze2_gale
+{
+	text-align:left;
+    font-style: Oblique;
+	font-weight: 300;
+	font-size: 61px;
+	font-family: Sans-Serif;
+	color: khaki;
+	text-indent: 15mm;
+	line-height: 18mm;
+	word-spacing: 13pt;
+	letter-spacing:0,3cm;
+}
+
+p#zdaniedrugie2__gale
+{
+	text-align:left;
+	text-transform: lowercase;
+	text-decoration:line-through;
+	font-weight: 600;
+	font-size: 1,1in;
+	font-family: Sans-Serif;
+	color: moccasin;
+	text-indent: 15mm;
+	line-height: 18mm;
+	word-spacing: 13pt;
+	letter-spacing:0,3cm;
+}
+
+p#zdanietrzecie2__gale
+{
+	text-align:left;
+	text-transform:capitalize;
+	font-weight: 800;
+	font-size: 3em;
+	font-family: Sans-Serif;
+	color: gold;
+	text-indent: 15mm;
+	line-height: 18mm;
+	word-spacing: 13pt;
+	letter-spacing:0,3cm;
+}
