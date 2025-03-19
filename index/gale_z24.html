@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Zadanie 24</title>
+        <style>
+            /* Ustawienie czcionki Arial dla całego dokumentu */
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h1>1. Jakie standardowo dostępne są czcionki w systemie Windows.</h1>
+            
+        <ul type="square">
+            <li>Times New Roman (szeryfowa)</li>
+            <li>Arial (bezszeryfowa)</li>
+            <li>Courier New (monotypiczna)</li>
+        </ul><br>
+
+        <h1>2. Jakich czcionek dodatkowo dostarcza Internet Explorer.</h1>
+        
+        <ul type="circle">
+            <li>Verdana</li>
+            <li>Tahoma</li>
+            <li>'Trebuchet MS'</li>
+            <li>Georgia</li>
+        </ul>
+
+        <h1>3. Wymień rodziny ogólne i zapisz przykłady.</h1>  
+        
+        <u><ul>
+            <li><strong>Serif:</strong> Przykład: <span style="font-family: 'Times New Roman', Times, serif;">Times New Roman</span></li>
+            <li><strong>Sans-serif:</strong> Przykład: <span style="font-family: Arial, Helvetica, sans-serif;">Arial</span></li>
+            <li><strong>Monospace:</strong> Przykład: <span style="font-family: 'Courier New', Courier, monospace;">Courier New</span></li>
+            <li><strong>Cursive:</strong> Przykład: <span style="font-family: 'Brush Script MT', cursive;">Brush Script MT</span></li>
+            <li><strong>Fantasy:</strong> Przykład: <span style="font-family: 'Comic Sans MS', fantasy;">Comic Sans MS</span></li>
+        </ul></u>
+
+        <h1>4. Kiedy stosujemy rodziny czcionek, w jaki sposób wpisujemy.</h1>
+
+        <h3>&nbsp;&nbsp;Kiedy stosujemy:</h3>
+        &nbsp;&nbsp;&nbsp;&nbsp;Rodziny ogólne wykorzystuje się jako ostatnia alternatywa - jeśli użytkownik nie<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;będzie posiadał żadnej czcionki, której nazwę wpisaliśmy wprost. Dlatego zwykle rodzinę<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;ogólną podaje się na samym końcu listy nazw czcionek.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Zapisujemy je w CSS za pomocą font-family, podając preferowaną czcionkę oraz alternatywy.
+
+        <h1>5. Rodzaje wyrównania tekstu.</h1>
+
+        <ul type="square">
+            <li>Do prawej </li>
+            <li>Do lewej</li>
+            <li>Wyśrodkowane</li>
+            <li>Wyjustowane</li>
+        </ul>
+
+        <h1>6. Kolor tekstu.</h1>
+        <h3>&nbsp;Kolor można zmienić za pomocą:</h3>
+
+        <p style="color: blue;">&nbsp;&nbsp;&nbsp;&nbsp;Nazwy kolorów | style="color: blue;"</p>
+        <p style="color: #03fa38;">&nbsp;&nbsp;&nbsp;&nbsp;Wartości HEX | style="color: #03fa38;"</p>
+        <p style="color: rgb(173, 17, 187);">&nbsp;&nbsp;&nbsp;&nbsp;Wartości RGB | style="color: rgb(173, 17, 187);"</p>
+        <p style="color: rgba(41, 13, 165, 0.5);">&nbsp;&nbsp;&nbsp;&nbsp;Wartości RGBA | style="color: rgba(41, 13, 165, 0.5);"</p>
+        <p style="color: hsl(155, 91%, 41%);">&nbsp;&nbsp;&nbsp;&nbsp;Wartości HSL | style="color: hsl(155, 91%, 41%);"</p>
+        <p style="color: hsla(0, 95%, 45%, 0.5);">&nbsp;&nbsp;&nbsp;&nbsp;Wartości HSLA | style="color: hsla(0, 95%, 45%, 0.5);"</p>
+        
+        <h1>7. Dekoracja tekstu.</h1>
+        
+        <h3>&nbsp;&nbsp;&nbsp;Opis:</h3>
+        &nbsp;&nbsp;&nbsp;&nbsp;Dekoracja tekstu w HTML i CSS pozwala na dodanie różnych efektów do tekstu, takich jak podkreślenie,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;przekreślenie, linie nad lub przez tekst. Dekoracje można stosować do tekstu, aby nadać mu wyróżniający się<br>                &nbsp;&nbsp;&nbsp;&nbsp;wygląd lub wyróżnić ważne informacje.
+
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Właściwość <strong>text-decoration</strong> w CSS umożliwia stosowanie tych dekoracji. Oto przykłady jej zastosowania:</h3>
+        
+        <ol type="a">
+            <li><strong>Podkreślenie:</strong> Używamy <code>text-decoration: underline</code> do podkreślenia tekstu.</li>
+            <li><strong>Przekreślenie:</strong> Używamy <code>text-decoration: line-through</code> do przekreślenia tekstu.</li>
+            <li><strong>Linia nad tekstem:</strong> Używamy <code>text-decoration: overline</code> do dodania linii nad tekstem.</li>
+            <li><strong>Brak dekoracji:</strong> Używamy <code>text-decoration: none</code> do usunięcia dekoracji z tekstu.</li>
+        </ol>
+        
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Przykłady:</h3>
+        
+        <ol type="a">
+             <li><strong>Podkreślenie:</strong> <span style="text-decoration: underline;">Ten tekst jest podkreślony.</span></li>
+            <li><strong>Przekreślenie:</strong> <span style="text-decoration: line-through;">Ten tekst jest przekreślony.</span></li>
+            <li><strong>Linia nad tekstem:</strong> <span style="text-decoration: overline;">Ten tekst ma linię nad sobą.</span></li>
+            <li><strong>Brak dekoracji:</strong> <span style="text-decoration: none;">Ten tekst nie ma żadnej dekoracji.</span></li>
+        </ol>
+        
+        <h1>8. Warianty czcionek.</h1>
+
+        <ul>
+            <li>Normal</li>
+            <li>Small-caps</li>
+            <li>All-caps</li>
+            <li>Capitalize</li>
+            <li>Lowercase</li>
+        </ul>
+
+        <h1>9. Pogrubienie czcionek.</h1>
+
+        <ul>
+            <li>bold</li>
+            <li>strong</li>
+        </ul>
+
+        <h1>10. Rozmiar czcionek.</h1>
+
+        <ul>
+            <li>xx-small</li>
+            <li>x-small</li>
+            <li>small</li>
+            <li>medium</li>
+            <li>large</li>
+            <li>x-large</li>
+            <li>xx-large</li>
+        </ul>
+
+        <h1>11. Transformacja tekstu.</h1>
+
+        &nbsp;&nbsp;&nbsp; <u>Składnia reguły:</u><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<u>selektor {text-transform: transformacja;}</u> <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<u>Wyraz selektor ma zastosowanie do wszystkich elementów.</u><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<u>Transformacja przykłady z opisem:</u>
+        <ul type="square">
+        <u><li>Capitalize - zamiana pierwszych liter wszystkich wyrazów na wielkie</li>
+        <li>Uppercase - zamiana wszystkich liter na wielkie</li>
+        <li>Lowercase - zamiana wszystkich liter na małe</li></u>
+        </ul>
+
+        <h1>12. Wcięcia tekstu</h1>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;Składnia reguły:<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;selektor {text-indent: wcięcie;}<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Wyraz selektor ma zastosowanie do elementów blokowych.<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Podczas wpisywania należy podać konkretną wielkość, używając jednostek miary:<br>
+        <ul type="square">
+        <li>piksele - px</li>
+        <li>punkty edytorskie - pt</li>
+        <li>wysokość litery "x" - ex</li>
+        <li>wysokość aktualnej czcionki - em</li>
+        <li>centymetry lub milimetry - cm, mm</li>
+        <li>części dziesiętne centymetra pisane z kropką np.: 0.5cm</li>
+        <li>cale - in (1in=2.54cm)</li>
+        <li> procent wielkości nadrzędnej - %</li>
+        </ul>
+
+        <h1>13. Odstęp między wierszami</h1>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;Składnia reguły: <br><br> 
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;selektor {line-height: wartość;}
+
+        <h1>14. Odstęp między wyrazami</h1>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;Składnia reguły: <br><br>
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;selektor {word-spacing: wartość;}
+
+        <h1>15. Odstęp między literami</h1>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;Składnia reguły:  <br><br>
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;selektor {letter-spacing: wartość;}
+
+        <h1>16. Łączenie właściwości czcionek i tekstu</h1>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;Składnia reguły:<br><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;selektor {font-family: rodzaj-czcionki;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-size: rozmiar-czcionki;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-weight: grubość-czcionki;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-style: styl-czcionki;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;line-height: wysokość-linii;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: odstęp-między-literami;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;word-spacing: odstęp-między-wyrazami;}
+    </body>
+</html>
