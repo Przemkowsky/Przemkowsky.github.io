@@ -1,0 +1,148 @@
+<html>
+<head>
+<style>
+#j{
+width: 225px;
+height:acm;
+padding : 5px;
+border : 4px dashed black;
+background : rgb(229, 243, 27);
+}
+#dz{
+width: 225px;
+height:auto;
+padding : 5px;
+border : 4px dotted black;
+background : rgb(2, 184, 144);
+}
+#dwanaj{
+width: 250px;
+height:auto;
+padding : 5px;
+border : 4px dotted black;
+background : rgb(202, 8, 170);
+}
+#dwanad{
+width: 350px;
+height:auto;
+padding : 5px;
+border : 4px dotted black;
+background : rgb(163, 23, 69);
+}
+#trzyna{
+width: 350px;
+height:auto;
+padding : 5px;
+border : 4px dotted black;
+background : rgb(105, 240, 175);
+}
+#czterna{
+width: 425px;
+height:auto;
+padding : 5px;
+border : 4px dotted black;
+background : rgb(200 , 150 , 100);
+}
+#s{
+width: 420px;
+height:acm;
+padding : 5px;
+border : 4px dashed black;
+background : rgb(6, 189, 189);
+}
+#o{
+width: 225px;
+height:auto;
+padding : 5px;
+border : 4px dashed black;
+background : rgb(184, 89, 89);
+}
+#d{
+width: 400px;
+height:2cm;
+padding : 5px;
+border : 4px dotted black;
+background : rgb(154, 154, 207);
+}
+#t{
+width: 170px;
+height:7mm;
+padding : 5px;
+border : 4px dotted black;
+background : rgb(0,150,0);
+}
+#gruby{font-weight:bold;}
+</style>
+</head>
+<body>
+<ol type="1"><h1><li>składnia teoretyczna definiowania klasy</li></h1>
+<p id="j">selektor.klasa { cecha: wartość }</p>
+<h1><li>Podaj opis dla Klasa "cecha" oraz "wartość"</li></h1>
+<p id="d">Klasa to wartość atrybutu class="..." nadanego selektorowi z poziomu języka (X)HTML.<br>
+"cecha" oraz "wartość" określają atrybuty elementu nadane poprzez style.
+</p>
+<h1><li>Jaki znacznik może być selektorem</li></h1>
+Selektorem może być dowolny znacznik,<br>
+np.<br>
+<p id="t">p =>>akapit</p>
+<p id="t">h1 =>> tytuł</p>
+<p id="t">td =>> komórka tabeli</p>
+<h1><li>Podaj uwagi na temat nazwy klas</li></h1>
+<p>Nazwą może być <g id="gruby">dowolny pojedynczy wyraz</g>, nie może on zawierać<br>
+a)<g id="gruby">spacji</g><br>
+b)<g id="gruby">kropki</g><br>
+c)<g id="gruby">przecinka</g><br>
+d)<g id="gruby">dwukropka</g><br>
+f)<g id="gruby">pytajnika</g><br>
+g)<g id="gruby">nawiasów</g><br>
+h)<g id="gruby">znaku równości</g><br>
+h)<g id="gruby">plusa</g><br>
+Może zawierać:<br>
+a)<g id="gruby">litery (A-Z, a-z)</g><br>
+b)<g id="gruby">cyfry (0-9)</g><br>
+c)<g id="gruby">myślniki ("-")</g><br>
+d)<g id="gruby"> podkreślniki("_")</g></p>
+Nazwa nie może zaczynać się od cyfr ani myślników
+Gdy chcemy użyć znaków "zakazanych" znaków, należy <g id="gruby">w deklaracji klasy poprzedzić je odwróconym ukośnikiem "\",</g>
+<h1><li>Jakie jest zastosowanie klas?</li></h1>
+Deklaracja klasy jest przydatna szczególnie, jeśli na wielu stronach serwisu znajdują się<br>
+elementy mające takie samo formatowanie
+<h1><li>Jakie jest zastosowanie klas?</li></h1>
+Kiedy nie można posłużyć się selektorem typu, ponieważ na stronie znajdują się inne znaczniki tego samego rodzaju co
+wybrany element, ale nie chcemy, aby i one otrzymały takie samo formatowanie. 
+<h1><li>składnia teoretyczna listy klasy</li></h1>
+<p id="s"><.selektor class="klasa1 klasa2 klasa3...">...<&#8203;/selektor></p>
+<h1><li>Czym są podzbiory klas. Składnia teoretyczna listy klasy</li></h1>
+<p id="s">selektor.klasa1.klasa3 { cecha: wartość }</p>
+<p id="o">Istnieje możliwość określenia tzw. podzbioru klas, czyli podania, jakie klasy musi mieć jednocześnie przypisane element, aby wybrana reguła CSS miała do niego zastosowanie</p>
+<h1><li>Co jest sygnałem (przesłanką), że należy zastosować klasy</li></h1>
+<p id="dz">Jeśli chcemy do pojedynczego elementu przypisać kilka różnych klas, należy posłużyć się</p>
+<h1><li>Kiedy i z jakiego powodu powinny być planowane klasy dla wykonywanej strony</li></h1>
+jeśli na wielu stronach serwisu znajdują się
+elementy mające takie samo formatowanie, a dodatkowo nie można dla nich posłużyć się
+selektorem typu, ponieważ na stronie znajdują się inne znaczniki tego samego rodzaju co
+wybrany element, ale nie chcemy, aby i one otrzymały takie samo formatowanie
+<h1><li>Jaki jest cel stosowania komentarzy podczas definiowania klas?</li></h1>
+Celem tych komentarzy jest opisywanie ich przeznaczenie. Po jakimś czasie w
+Twoim arkuszu stylów może znaleźć się tyle klas, że zapomnisz, do jakich elementów
+się one odnosiły
+<h1><li>Podaj konkretny przykład definiowania klasy oraz jej użycia(wywołanie)</li></h1>
+definicja arkusza styli
+<p id="dwanaj">p.przyklad_klasa { color: red }</p>wywołanie
+<p id="dwanad"><.p class="przyklad_klasa">To jest akapit.<./p></p>
+<h1><li>Omów klasa donosząca się tylko do jednego selektora wraz z przykładem</li></h1>
+Podobnie jak w przypadku identyfikatora, tak zdefiniowana klasa może zostać użyta tylko w
+tym selektorze, do którego została przypisana np:.
+<p id="trzyna">p.moja<br>{color:green;font-size:14pt;}</p>
+<h1><li>Jaki jest cel stosowania klasy uniwersalnej. Jakie jest znaczenie znaku „*” oraz kiedymożna nie stosować tego znaku. Podaj przykład</li></h1>
+W przypadku stosowanie klas, często podczas ich definiowania, nie wiemy jeszcze, w
+stosunku do jakich znaczników będziemy chcieli je później użyć. Wtedy przydatny okazuje
+się selektor uniwersalny, który pozwala przypisać własności klasy do wszystkich elementów,
+którym zostanie ona nadana, bez względu na typ znacznika czyli użycie jest możliwe w
+różnych znacznikach.
+używając gwiazdki "*" przed selektorem, odnosi się to do wszystkich elementów dokumentu HTML, które posiadają przytoczoną klasę
+<p id="czterna">.moja{color:red;font-size:12pt;font-style:italic;}</p>
+<p id="czterna"><.p class=”moja”>Przykład akapitu z określoną klasą<./p></p>
+</body>
+</html>
+<!-- Przemysław Gałęziowski -->
