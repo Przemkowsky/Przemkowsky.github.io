@@ -1,0 +1,18 @@
+div{
+    background-color: green;
+    width: 613px;
+}
+#blok1_galeziowski:hover{
+    background-color: gold;
+    font-size: 19mm;
+}
+#blok2_galeziowski:hover{
+    background-color: yellow;
+    font-size: 19mm;
+}
+#blok3_galeziowski:hover{
+    background-color: red;
+    font-size: 19mm;
+}
+/*Przemysław galeziowski*/
+/*hover powoduje zmiany pewnych elementów po najechaniu na nie urządzeniem wskazującym*/
