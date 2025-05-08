@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+	<style>
+	#i{
+width: auto;
+height:auto;
+padding : 5px;
+border : 4px dotted rgb(82, 8, 8);
+background : rgb(0, 151, 238);
+}
+	</style>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <ul>
+            <li>
+                <h1>
+                    :first-line
+                </h1>
+                <p>
+                    obejmuje formatowaniem całą pierwszą linię. 
+                </p>
+                <p id="i">
+p 
+{ 
+    color:navy; 
+    font-size:12pt; 
+} 
+
+p:first-line 
+{ 
+    color:red; 
+    font-size:20pt; 
+    font-weight:bold; 
+} 
+                </p>
+            </li>
+            <li>
+                <h1>::after i ::before</h1>
+                <p>
+                    Oba elementy służą do umieszczania tekstu przed i za 
+formatowanym elementem strony. Poniżej zamieszczam odpowiedni przykład.
+                </p>
+                <p id="i">
+p:before     
+{     
+    content:"TO SĄ ĆWICZENIA";     
+    font-size:15pt;     
+    font-style:italic;        
+    font-weight:bold;     
+}  
+p:after     
+{     
+    content:"AUTOR Król Lew";     
+    font-size:15pt;     
+    font-style:italic;     
+    font-weight:bold;     
+} 
+                </p>
+            </li>
+            <li>
+                <h1>
+                    :first-letter 
+                </h1>
+                <p>
+                    formatowanie pierwszej litery w bloku 
+                    tekstu.
+                </p>
+                <p id="i">
+p 
+{ 
+    color:navy; 
+    font-size:30pt; 
+} 
+
+p:first-letter 
+{ 
+    color:red; 
+    font-size:100pt; 
+}
+                </p>
+            </li>
+        </ul>
+    </body>
+</html>
