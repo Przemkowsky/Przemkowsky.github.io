@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title> Kod do zadania 57 </title>
+</head>
+<body>
+
+<center>
+<h1>Kod HTML:</h1>
+<textarea readonly rows="38" cols="85"><!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title> Zadanie 57 </title>
+<LINK href="zadanie57_klei.css" rel="stylesheet" type="text/CSS">
+</head>
+<body>
+
+<p><u>Akapit 1</u> Klein klasa 1P grupa 1<br>
+Użyłem * gwiazdka dla selektora uniwersalnego,<br>
+Parametry dla uniwersalnego:<br>wielkość 30 + liczba liter imienia = 30 + 5 (Filip) = 35 pt 
+<br>mam numer w dzienniku 13 a więc nieparzysty, czyli kolor tła srebrny<br> kolor liter czerwony</p>
+
+<p class="klasa_nieuniwersalna_Klein"><u class="klasa_nieuniwersalna_Klein">Akapit 2</u> Klasa 1P grupa 1
+<br>Użyłem p.klasa_nieuniwersalna_Klein<br>Parametry dla klasy nieuniwersalnej:
+<br>wielkość 25 + liczba_liter_nazwiska = 25 + 5 (Klein) = 30 pt<br>kolor liter zielony</p>
+
+<h1 class="klasa_uniwersalna_Klein"><u class="klasa_uniwersalna_Klein">Akapit 3</u> Klein 1P grupa 1
+<br>Użyłem .klasa_uniwersalna_Klein dla h1<br>Parametry dla klasy uniwersalnej(dla miesiąca 3):<br>
+wielkość 20 + miesiąc urodzenia = 20 + 3 (marzec) = 23 pt<br>
+kolor liter zielony</h1>
+
+<div class="klasa_uniwersalna_Klein"><u class="klasa_uniwersalna_Klein">Akapit 4</u> Klein 1P grupa 1<br>
+Użyłem .klasa_uniwersalna_Klein dla div<br>
+Parametry dla klasy uniwersalnej:<br>wielkość 20 + miesiąc urodzenia = 20 + 3 (marzec) = 23 pt<br>
+kolor liter zielony</div>
+</body>
+</html>
+<!-- Filip Klein 1P g1 09.05.2025 --></textarea>
+
+<h1>Kod CSS:</h1>
+<textarea readonly rows="14" cols="30">*{
+    font-size: 35pt;
+    color: red;
+    background-color: silver;
+}
+p.klasa_nieuniwersalna_Klein, 
+p.klasa_nieuniwersalna_Klein * {
+    font-size: 30pt;
+    color: green;
+}
+*.klasa_uniwersalna_Klein{
+    font-size: 23pt;
+    color: green;
+}</textarea>
+
+</center>
+</body>
+</html>
+<!-- Filip Klein 1P g1 09.05.2025 -->

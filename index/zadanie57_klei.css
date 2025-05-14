@@ -1,0 +1,14 @@
+*{
+    font-size: 35pt;
+    color: red;
+    background-color: silver;
+}
+p.klasa_nieuniwersalna_Klein, 
+p.klasa_nieuniwersalna_Klein * {
+    font-size: 30pt;
+    color: green;
+}
+*.klasa_uniwersalna_Klein{
+    font-size: 23pt;
+    color: green;
+}
