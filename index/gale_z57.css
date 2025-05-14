@@ -3,12 +3,12 @@
     color: red;
     background-color: silver;
 }
-p.klasa_nieuniwersalna_Klein, 
-p.klasa_nieuniwersalna_Klein * {
+p.klasa_nieuniwersalna_galeziowski, 
+p.klasa_nieuniwersalna_galeziowsk * {
     font-size: 30pt;
     color: green;
 }
-*.klasa_uniwersalna_Klein{
+*.klasa_uniwersalna_galeziowsk{
     font-size: 23pt;
     color: green;
 }
