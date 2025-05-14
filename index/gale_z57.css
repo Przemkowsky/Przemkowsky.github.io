@@ -4,11 +4,11 @@
     background-color: silver;
 }
 p.klasa_nieuniwersalna_galeziowski, 
-p.klasa_nieuniwersalna_galeziowsk * {
+p.klasa_nieuniwersalna_galeziowski * {
     font-size: 30pt;
     color: green;
 }
-*.klasa_uniwersalna_galeziowsk{
+*.klasa_uniwersalna_galeziowski{
     font-size: 23pt;
     color: green;
 }
