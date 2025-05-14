@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Kod HTML</h1>
+<textarea rows="18" cols="80" readonly>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title> Zadanie 57 </title>
+<LINK href="gale_z57.css" rel="stylesheet" type="text/CSS">
+</head>
+<body>
+
+<p><u>Akapit 1</u> Galeziowski klasa 1P grupa 1<br>
+Użyłem * gwiazdka dla selektora uniwersalnego,<br>
+Parametry dla uniwersalnego:<br>wielkość 30 + liczba liter imienia = 30 + 10 (Przemysław) = 40 pt 
+<br>mam numer w dzienniku 5 a więc nieparzysty, czyli kolor tła srebrny<br> kolor liter czerwony</p>
+
+<p class="klasa_nieuniwersalna_galeziowski"><u class="klasa_nieuniwersalna_galeziowski">Akapit 2</u> Klasa 1P grupa 1
+<br>Użyłem p.klasa_nieuniwersalna_galeziowski<br>Parametry dla klasy nieuniwersalnej:
+<br>wielkość 25 + liczba_liter_nazwiska = 25 + 11 (galeziowski) = 36 pt<br>kolor liter zielony</p>
+
+<h1 class="klasa_uniwersalna_galeziowski"><u class="klasa_uniwersalna_galeziowski">Akapit 3</u> galeziowski 1P grupa 1
+<br>Użyłem .klasa_uniwersalna_galeziowski dla h1<br>Parametry dla klasy uniwersalnej(dla miesiąca 2):<br>
+wielkość 20 + miesiąc urodzenia = 20 + 2 (luty) = 22 pt<br>
+kolor liter zielony</h1>
+
+<div class="klasa_uniwersalna_galeziowski"><u class="klasa_uniwersalna_galeziowski">Akapit 4</u> galeziowski 1P grupa 1<br>
+Użyłem .klasa_uniwersalna_galeziowski dla div<br>
+Parametry dla klasy uniwersalnej:<br>wielkość 20 + miesiąc urodzenia = 20 + 2 (luty) = 22 pt<br>
+kolor liter zielony</div>
+
+
+</body>
+</html>
+<!-- Przemysław Gałęziowski 1P 14.05.2025 -->
+
+</textarea>
+<h1>Kod CSS</h1>
+<textarea rows="11" cols="80" readonly>
+
+*{
+    font-size: 35pt;
+    color: red;
+    background-color: silver;
+}
+p.klasa_nieuniwersalna_galeziowski, 
+p.klasa_nieuniwersalna_galeziowski * {
+    font-size: 30pt;
+    color: green;
+}
+*.klasa_uniwersalna_galeziowski{
+    font-size: 23pt;
+    color: green;
+}
+
+</textarea>
+</body>
+</html>
