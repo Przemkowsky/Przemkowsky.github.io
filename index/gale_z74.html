@@ -1,42 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Zadanie 74</title>
-    </head>
-    <body>
-        <table border="1" cellpadding="20" cellspacing="0"> 
-            <tr>
-                <th>Kolor tła</th>
-                <td>Jednozadaniowy opis:<br><br><br>selektor {background-color: kolor;}<br><br><br></td>
-            </tr>
-            <tr>
-                <th>Tło Obrazkowe</th>
-                <td>Jednozadaniowy opis: <br><br><br>selektor {background-image: url(adres);}<br><br><br>background-image: url("file:///c:/CSS/_rozwiazanie/tla_marginesy/grafiki/tlo_1.jpg");</td>
-            </tr>
-            <tr>
-                <th>Powtarzanie tła</th>
-                <td>Jednozadaniowy opis: <br><br><br> </td>
-            </tr>
-            <tr>
-                <th>Pozycja tła</th>
-                <td>saddsad</td>
-            </tr>
-            <tr>
-                <th>Zaczepienie tła</th>
-                <td>saddsad</td>
-            </tr>
-            <tr>
-                <th>Łączenie<br> atrybutów tła </th>
-                <td>saddsad</td>
-            </tr>
-            <tr>
-                <th>Gradient <br>liniowy </th>
-                <td>saddsad</td>
-            </tr>
-            <tr>
-                <th>Gradient <br>promienisty</th>
-                <td>saddsad</td>
-            </tr>
-        </table>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 74</title>
+</head>
+<body>
+    <table border="1" cellpadding="20" cellspacing="0">
+        <tr>
+            <th>Kolor tła</th>
+            <td>
+                Jednozadaniowy opis:<br><br>
+                selektor { background-color: kolor; }<br><br>
+                Przykład:<br>
+                body { background-color: lightblue; }
+            </td>
+        </tr>
+        <tr>
+            <th>Tło obrazkowe</th>
+            <td>
+                Jednozadaniowy opis:<br><br>
+                selektor { background-image: url(adres); }<br><br>
+                Przykład:<br>
+                background-image: url("file:///c:/CSS/_rozwiazanie/tla_marginesy/grafiki/tlo_1.jpg");
+            </td>
+        </tr>
+        <tr>
+            <th>Powtarzanie tła</th>
+            <td>
+                Jednozadaniowy opis:<br><br>
+                selektor { background-repeat: typ; }<br><br>
+                Przykład:<br>
+                background-repeat: no-repeat; <br><br>
+                Możliwe wartości: repeat, repeat-x, repeat-y, no-repeat
+            </td>
+        </tr>
+        <tr>
+            <th>Pozycja tła</th>
+            <td>
+                Jednozadaniowy opis:<br><br>
+                selektor { background-position: pozycja; }<br><br>
+                Przykład:<br>
+                background-position: center top;
+            </td>
+        </tr>
+        <tr>
+            <th>Zaczepienie tła</th>
+            <td>
+                Jednozadaniowy opis:<br><br>
+                selektor { background-attachment: typ; }<br><br>
+                Przykład:<br>
+                background-attachment: fixed; <br><br>
+                Możliwe wartości: scroll, fixed, local
+            </td>
+        </tr>
+        <tr>
+            <th>Łączenie<br> atrybutów tła</th>
+            <td>
+                Jednozadaniowy opis:<br><br>
+                selektor { background: kolor url(adres) powtarzanie pozycja; }<br><br>
+                Przykład:<br>
+                background: lightblue url('tlo.jpg') no-repeat center top;
+            </td>
+        </tr>
+        <tr>
+            <th>Gradient <br>liniowy</th>
+            <td>
+                Jednozadaniowy opis:<br><br>
+                selektor { background-image: linear-gradient(kierunek, kolor1, kolor2); }<br><br>
+                Przykład:<br>
+                background-image: linear-gradient(to right, red, yellow);
+            </td>
+        </tr>
+        <tr>
+            <th>Gradient <br>promienisty</th>
+            <td>
+                Jednozadaniowy opis:<br><br>
+                selektor { background-image: radial-gradient(kształt, kolor1, kolor2); }<br><br>
+                Przykład:<br>
+                background-image: radial-gradient(circle, white, black);
+            </td>
+        </tr>
+    </table>
+</body>
 </html>
