@@ -1,54 +1,43 @@
+
 <!DOCTYPE html>
-<html lang="pl">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Zadanie 79</title>
-    <style>
-        body { 
-            margin: 0;
-            padding: 0;
-        }
-
-        p.zero_galeziowski {
-            margin: 0;
-            padding: 10px;
-            background-color: #ffcccc;
-            background-image: url('logo.png');
-            background-repeat: repeat-x;
-            font-size: 20pt;
-            font-family: Arial, sans-serif;
-            color: red;
-        }
-
-        p.jeden_galeziowski {
-            margin: 0;
-            padding: 40px 10px;
-            background-color: #ffcc99;
-            background-image: url('logo.png');
-            background-repeat: no-repeat;
-            background-position: top right;
-            font-size: 72pt;
-            font-family: Arial, sans-serif;
-            color: blue;
-        }
-
-        p.dwa_galeziowski {
-            margin: 0;
-            padding: 10px;
-            background-color: #ccff99;
-            background-image: url('logo.png');
-            background-repeat: no-repeat;
-            background-position: bottom left;
-            font-size: 20pt;
-            font-family: Arial, sans-serif;
-            color: limegreen;
-        }
-    </style>
+<meta charset="utf-8"> 
+<title> Zadanie 79 </title>
+<style>
+    body { 
+        margin: 0px; 
+        border: 0px; 
+        padding:  0px;  
+    } 
+    div {
+        width: 1300px;
+        height: auto;
+        margin: auto;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    p#zero_galeziowski {
+        color:#ff0000;
+        font-size: 30pt;
+        text-align: center;
+    }
+    p#jeden_galeziowski {
+        font-size: 140px;
+        color: #0000c9;
+    }
+    p#dwa_galeziowski {
+        font-size: 54px;
+        color: #808080;
+    }
+</style>
 </head>
 <body>
-    <p class="zero_galeziowski">obraz powtarzany w kierunku poziomym obraz powtarzany w kierunku poziomym obraz powtarzany w kierunku poziomym</p>
-    <p class="jeden_galeziowski">obraz w górnym<br>prawym rogu tła</p>
-    <p class="dwa_galeziowski">obraz w dolnym lewym rogu obraz w dolnym lewym rogu obraz w dolnym lewym rogu obraz w dolnym lewym rogu obraz w dolnym lewym rogu</p>
+
+<div style="background:url(logo_duze_galeziowski.png);background-repeat:repeat-x;background-color: #ffb6c1;background-size: 80px 80px;"><p id="zero_galeziowski">obraz powtarzany w kierunku poziomym obraz powtarzany w kierunku poziomym obraz powtarzany w kierunku poziomym</p></div>
+<div style="background:url(logo_duze_galeziowski.png);background-repeat:no-repeat;background-size:300px 300px;background-position:right;background-color: #ffa286e0;"><p id="jeden_galeziowski">obraz w górnym<br> prawym rogu tła</p></div>
+<div style="background:url(logo_duze_galeziowski.png);background-repeat:no-repeat;background-size:60px 60px;background-color: rgb(174, 255, 107);background-position:left-bottom;"><p id="dwa_galeziowski">obraz w dolnym lewym rogu obraz w dolnym lewym rogu <br>obraz w dolnym lewym rogu obraz w dolnym lewym rogu <br>obraz w dolnym lewym rogu obraz w dolnym lewym rogu </p></div>
+
 </body>
-</html>
-<!-- Przemysław galeziowski -->
+</html> 
+<!-- galeziowski Przemysław 1P g1 30.05.2025 -->
