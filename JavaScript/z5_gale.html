@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gałęziowski 2P</title>
+    <script>
+        function WinOpen_graf1() {
+            window.open("grafika1.html", "okienko1", "toolbar=no,directories=no,menubar=no,height=380,width=200,top=500,left=400");
+        }
+        function WinOpen_graf2() {
+            window.open("grafika2.html", "okienko2", "toolbar=no,directories=no,menubar=no,height=380,width=200,top=500,left=700");
+        }
+        function WinOpen_graf3() {
+            window.open("grafika3.html", "okienko3", "toolbar=no,directories=no,menubar=no,height=380,width=200,top=500,left=1000");
+        }
+        function WinOpen_graf4() {
+            window.open("grafika4.html", "okienko4", "toolbar=no,directories=no,menubar=no,height=380,width=200,top=500,left=1300");
+        }
+        function okno_zamknij() {
+            window.close();
+        }
+    </script>
+</head>
+<body>
+    <center><p style="color:red; font-size:1cm;">Wykonał: Przemysław Gałęziowski mój numer w dzienniku 5, czyli mam układ [(5) mod 4=1] układ 2</p></center>
+    
+    <form>
+        <center><input type="button" name="przycisk1" value="Grafika 1" onclick="WinOpen_graf1()">
+        <input type="button" name="przycisk2" value="Grafika 2" onclick="WinOpen_graf2()">
+        <input type="button" name="przycisk3" value="Grafika 3" onclick="WinOpen_graf3()">
+        <input type="button" name="przycisk4" value="Grafika 4" onclick="WinOpen_graf4()">
+        <br><br><br><br>
+        <input type="button" value="zamknij okno" onclick="okno_zamknij()"></center>
+    </form>
+</body>
+</html>
