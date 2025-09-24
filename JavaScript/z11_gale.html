@@ -1,0 +1,22 @@
+ <html>
+ <body>
+ <div style="color:green;font-size:50px;">
+ <script language="JavaScript">
+// Przemysław Gałęziowski 2P
+// Zadanie 11
+ var D1_gale=prompt("Data1=","");
+ var D2_gale=prompt("Data2=","");
+ var sekund;
+ var a=parseFloat(D1_gale);
+ var b=parseFloat(D2_gale);
+ sekund=(a-b)*24*60*60;
+ document.write("Ilość sekund między dniami "+a+" i "+b+" = "+sekund+"<br>");
+ function okno_zamknij_gale()
+ {
+ window.close()
+ }
+ </script>
+ </div>
+ <input type="button" value="zamknij okno" onclick="okno_zamknij_gale()"/>
+ </body>
+ </html>

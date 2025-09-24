@@ -1,0 +1,34 @@
+<html>
+ <body>
+ <div style="color:green;font-size:32px;">
+ <script language="JavaScript">
+// Przemysław Gałęziowski
+// Zadanie 12
+
+var D1_gale = prompt("Podaj pierwszy dzień (D1):", "");
+var G1_gale = prompt("Podaj godzinę w tym dniu (G1):", "");
+var D2_gale = prompt("Podaj drugi dzień (D2):", "");
+var G2_gale = prompt("Podaj godzinę w tym dniu (G2):", "");
+
+var d1 = parseFloat(D1_gale);
+var g1 = parseFloat(G1_gale);
+var d2 = parseFloat(D2_gale);
+var g2 = parseFloat(G2_gale);
+
+// zamiana na sekundy od początku miesiąca
+var t1 = (d1 - 1) * 24 * 3600 + g1 * 3600;
+var t2 = (d2 - 1) * 24 * 3600 + g2 * 3600;
+
+var sekund = t1 - t2;
+
+document.write("Ilość sekund między D1="+d1+" G1="+g1+" a D2="+d2+" G2="+g2+" = " + sekund + " sekund<br>");
+
+function okno_zamknij_gale()
+{
+  window.close()
+}
+ </script>
+ </div>
+ <input type="button" value="zamknij okno" onclick="okno_zamknij_gale()"/>
+ </body>
+</html>

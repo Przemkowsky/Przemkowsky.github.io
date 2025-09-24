@@ -1,88 +1,78 @@
- <html> 
-<head> 
-<title>Przemysław Gałęziowski</title> 
-<p align="left"> <font color="red" size="7" face="Arial"> Szkielet zaliczeniowy JavaScript Przemysław Gałęziowski 2P </font> </p> <br>  
- <script language="JavaScript"> 
-function WinOpen_z3() 
- { 
-window.open("z3_gale.html","okienko_z3","toolbar=no,directories=no,menubar=no,height=380,width
- =160,top=200,left=200"); 
- } 
-function WinOpen_z4() 
- { 
-window.open("z4_gale.html","okienko_z4","toolbar=no,directories=no,menubar=no,height=380,width
- =160,top=200,left=400"); 
- } 
-function WinOpen_z5() 
- { 
-window.open("z5_gale.html","okienko_z5","toolbar=no,directories=no,menubar=no,height=380,width
- =160,top=200,left=400"); 
- } 
-function WinOpen_z6() 
- { 
-window.open("z6_gale.html","okienko_z6","toolbar=no,directories=no,menubar=no,height=380,width
- =160,top=200,left=400"); 
- } 
- function WinOpen_z7() 
- { 
-window.open("z7_gale.html","okienko_z7","toolbar=no,directories=no,menubar=no,height=380,width
- =160,top=200,left=200"); 
- } 
-function WinOpen_z8() 
- { 
-window.open("z8_gale.html","okienko_z8","toolbar=no,directories=no,menubar=no,height=380,width
- =160,top=200,left=400"); 
- } 
-function WinOpen_z9() 
- { 
-window.open("z9_gale.html","okienko_z9","toolbar=no,directories=no,menubar=no,height=380,width
- =160,top=200,left=400"); 
- } 
-function WinOpen_z10() 
- { 
-window.open("z10_gale.html","okienko_z10","toolbar=no,directories=no,menubar=no,height=380,wi
- dth=160,top=200,left=400"); 
- } 
-function WinOpen_z11() 
- { 
-window.open("z11_bil.html","okienko_z11","toolbar=no,directories=no,menubar=no,height=380,wi
- dth=160,top=200,left=400"); 
- } 
-function WinOpen_z11_kod() 
- { 
-window.open("z11_gale_kod.html","okienko_z11_kod","toolbar=no,directories=no,menubar=no,height=3
- 80,width=160,top=200,left=400"); 
- }
-      function okno_zamknij() 
- { 
- window.close() 
- } 
- </script> 
- </head> 
-<body> 
- <form> 
- <input type="button" name="z3" value="z3_bilyi" onclick="WinOpen_z3(' ')"> <br><br> 
-<HR SIZE=4 WIDTH=50% ALIGN=LEFT COLOR=red> 
- <input type="button" name="z4" value="z4_bilyi" onclick="WinOpen_z4(' ')"> <br><br> 
-<HR SIZE=4 WIDTH=50% ALIGN=LEFT COLOR=red> 
- <input type="button" name="z5" value="z5_bilyi" onclick="WinOpen_z5(' ')"> <br><br> 
-<HR SIZE=4 WIDTH=50% ALIGN=LEFT COLOR=red> 
- <input type="button" name="z6" value="z6_bilyi" onclick="WinOpen_z6(' ')"> <br><br> 
-<HR SIZE=4 WIDTH=50% ALIGN=LEFT COLOR=red> 
- <input type="button" name="z7" value="z7_bilyi" onclick="WinOpen_z7(' ')"> <br><br> 
-<HR SIZE=4 WIDTH=50% ALIGN=LEFT COLOR=red> 
- <input type="button" name="z8" value="z8_bilyi" onclick="WinOpen_z8(' ')"> <br><br> 
-<HR SIZE=4 WIDTH=50% ALIGN=LEFT COLOR=red> 
- <input type="button" name="z9" value="z9_bilyi" onclick="WinOpen_z9(' ')"> <br><br> 
-<HR SIZE=4 WIDTH=50% ALIGN=LEFT COLOR=red> 
- <input type="button" name="z10" value="z10_bilyi" onclick="WinOpen_z10(' ')"> <br><br> 
-<HR SIZE=4 WIDTH=50% ALIGN=LEFT COLOR=red> 
- <input type="button" name="z11" value="z11_bilyi" onclick="WinOpen_z11(' ')"> 
- <input type="button" name="z11" value="z11_kod_bilyi" onclick="WinOpen_z11_kod(' ')"> 
-<HR SIZE=4 WIDTH=50% ALIGN=LEFT COLOR=red> 
-<br><br> 
-<input type="button" value="zamknij okno" onclick="okno_zamknij()"/> 
- </form> 
-</body> 
-</html>
+<html>
+<head>
+    <title>Zadanie 4</title>
+    <script>
+        function okno_zamknij_galeziowski(){
+            window.close();
+        }
+    </script>
+</head>
+<body>
+<h1>1) Kiedy powstał JavaScript (podaj datę)</h1>
+<p>Ten wszechobecny dziś język skryptowy został stworzony w 1995 roku, na mocy porozumienia z firmą 
+Sun Microsystems, w zamian za włączenie do przeglądarki Netscape obsługi technologii Java, język 
+otrzymał oficjalną nazwę JavaScript. W grudniu tego samego roku został zaimplementowany w 
+najnowszej wówczas wersji Navigatora i rozpoczął triumfalny pochód przez Sieć. </p>
 
+<h1>2) Dlaczego jest to język skryptowy</h1>
+<p>JavaScript jest przede wszystkim językiem skryptowym - to znaczy interpretowanym. Nie musi 
+zostać skompilowany do kodu maszynowego, aby można było zobaczyć efekty jego działania. 
+Wystarczy nam do tego przeglądarka internetowa, która ten język obsługuje.</p>
+
+<h1>3) Gdzie jest wykonywany JS(klient lub serwer)</h1>
+<p>Kod JavaScript jest wykonywany na komputerze klienta aby odciążyć serwer i nie odświeżać ciągle strony</p>
+
+<h1>4) Dlaczego jest JS to bezpieczne narzędzie</h1>
+<p>Ze względów bezpieczeństwa JavaScript ma znacznie ograniczone uprawnienia dostępu do zasobów komputera, 
+przy użyciu którego przeglądana jest dana strona, a wszelkie odwołania do funkcji i 
+obiektów wykonywane są w trakcie wykonywania programu.</p>
+
+<h1>5) Czy jest to język obiektowy, jeśli tak to dlaczego</h1>
+<p>Javascript jest językiem programowania obiektowego ponieważ wykorzystuje definicje obiektów, 
+metod, zdarzeń, które mogą być zastosowane do opisu właściwości obiektów. Autorzy JS zdefiniowali 
+bardzo dużo obiektów, metod, zdarzeń. W  JS obiekty posiadają pewną strukturę. Struktura to 
+określana jest przez DOM ( Document Object Model) Możesz korzystać z zdefiniowanych obiektów 
+oraz metod. Możesz też tworzyć swoje jak i modyfikować istniejące. </p>
+
+<h1>6) Wymień zalety JS:</h1>
+<p>Zaleta1:  Prostota w nauce<br>
+Zaleta2: Uniwersalność ponieważ działa we wszystkich popularnych przeglądarkach<br>
+Zaleta3: Wysoka wydajność<br>
+Zaleta4: Wsparcie na wielu platformach<br>
+Zaleta5: Integracja z HTML i CSS<br>
+Zaleta6: Duża liczba bibliotek i frameworków<br>
+Zaleta7: Umożliwia dynamiczne ściąganie i wysyłanie danych bez potrzeby przeładowania całej strony</p>
+
+<h1>7) Framework to:</h1>
+<p>Framework to rodzaj programu do tworzenia innych programów w JS</p>
+
+<h1>8) Do aplikacji mobilnych można użyć Framework</h1>
+<p>Bardzo popularnym frameworkiem do tworzenia aplikacji jest React Native. Z jego 
+pomocą możemy budować aplikacje mobilne na różne systemy operacyjne (cross-platform apps).</p>
+
+<h1>9) Aplikacje responsywne to: </h1>
+<p>To taka, która dostosowuje swój wygląd i układ do różnych urządzeń
+oraz rozmiarów ekranu - tak żeby była wygodna w użyciu zarówno na 
+komputerze, tablecie, jak i smartfonie.</p>
+
+<h1>10) Przepisz linie kody pod nimi wytłumaczenie jak działa ten fragment kodu</h1>
+<p>&lsaquo;input type="button" name="przycisk" value="Nowa Strona" onclick="WinOpen(' ')"&rsaquo;<br>
+ta instrukcja tworzy przycisk o nazwie "przycisk" który po kliknięciu na niego otwiera okno. 
+Na przycisku widać napis "Nowa Strona", który jest ustawiony za pomocą instrukcji value</p>
+
+<h1>11) Przepisz linie kodu pod nimi wytłumaczenie jak działa ten fragment kodu</h1>
+<p>window.open("obraz.html","okienko","toolbar=no,directories=no,menubar=no,height=280,width=160,top=200,left=200");<br>
+toolbar=no - ukrywa standardowy pasek narzędzi przeglądarki<br>
+directories=no - ukrywa przyciski katalogów<br>
+menubar=no - ukrywa menu przeglądarki<br>
+height=280 - ustawia wysokość okienka<br>
+width=160 - ustawia szerokość okienka<br>
+top=200 - określa odległość górnej krawędzi nowego okna od górnej krawędzi ekranu<br>
+left=200 - określa odległość lewej krawędzi nowego okna od lewej krawędzi ekranu<br></p>
+
+<h1>12) Opisz następującą instrukcję window.close()</h1>
+<p>Instrukcja window.close() w JavaScripcie służy do zamknięcia bieżącego okna przeglądarki (lub okna, do którego mamy odwołanie w kodzie)</p>
+<br><br>
+<input type="button" name="zamknij" value="zamknij" onclick="okno_zamknij_galeziowski(' ')">
+</body>
+</html>

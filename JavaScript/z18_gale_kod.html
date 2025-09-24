@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea rows="50" cols="500">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Użycie funkcji</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div style="color:navy;font-size:30px;">
+        <script language="JavaScript">
+        var a = parseFloat(prompt("Podaj a:", ""));
+        var b = parseFloat(prompt("Podaj b:", ""));
+
+        function suma_kow(a, b) {
+            return a + b;
+        }
+
+        function odejmowanie_kow(a, b) {
+            return a - b;
+        }
+
+        function mnozenie_kow(a, b) {
+            return a * b;
+        }
+
+        function od_kwadratu_kow(a, b) {
+            return [a*a, b*b];
+        }
+
+        function reszta_z_dzielenia_a_przez_b_kow(a, b) {
+            return a % b;
+        }
+
+        document.write("Suma: " + suma_kow(a, b) + "<br>");
+        document.write("Odejmowanie: " + odejmowanie_kow(a, b) + "<br>");
+        document.write("Mnożenie: " + mnozenie_kow(a, b) + "<br>");
+
+        var kwadraty = od_kwadratu_kow(a, b);
+        document.write("Kwadrat a: " + kwadraty[0] + "<br>");
+        document.write("Kwadrat b: " + kwadraty[1] + "<br>");
+
+        document.write("Reszta z dzielenia a przez b: " + reszta_z_dzielenia_a_przez_b_kow(a, b) + "<br>");
+        </script>
+    </div>
+</body>
+</html>
+
+    </textarea>
+</body>
+</html>
