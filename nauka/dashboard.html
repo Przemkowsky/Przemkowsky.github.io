@@ -11,6 +11,9 @@
   --card-bg:#f0f3ff;
   --font-size:16px;
   --font-weight:600;
+  --text-color:#333;
+  --wrapper-bg:rgba(255,255,255,0.95);
+  --shadow-color:rgba(0,0,0,0.3);
 }
 body {
   margin:0;
@@ -23,15 +26,26 @@ body {
   overflow-x:hidden;
   background-size:400% 400%;
   animation:gradientBG 15s ease infinite;
+  color:var(--text-color);
+  transition:background 0.5s, color 0.5s;
+}
+body.night-mode {
+  --bg1:#121212;
+  --bg2:#000000;
+  --card-bg:#1e1e1e;
+  --text-color:#e0e0e0;
+  --wrapper-bg:rgba(30,30,30,0.95);
+  --shadow-color:rgba(0,0,0,0.6);
 }
 .wrapper {
   max-width:1000px;
   margin:0 auto;
-  background:rgba(255,255,255,0.95);
-  color:#333;
+  background:var(--wrapper-bg);
+  color:var(--text-color);
   padding:30px;
   border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  box-shadow:0 10px 30px var(--shadow-color);
+  transition:background 0.5s, color 0.5s, box-shadow 0.5s;
 }
 h2 {margin-top:0;text-align:center;color:var(--bg2)}
 .grid {
@@ -49,15 +63,18 @@ h2 {margin-top:0;text-align:center;color:var(--bg2)}
   transform:rotateY(90deg) scale(0.7);
   opacity:0;
   animation:cardIn 0.8s forwards;
-  box-shadow:0 6px 12px rgba(0,0,0,0.15);
-  transition:0.3s transform,0.3s box-shadow;
+  box-shadow:0 6px 12px var(--shadow-color);
+  transition:0.3s transform,0.3s box-shadow, 0.3s background;
   position:relative;
   overflow:hidden;
 }
 .card:hover {
   transform:rotateY(0deg) scale(1.05) translateY(-10px);
-  box-shadow:0 15px 25px rgba(0,0,0,0.3);
+  box-shadow:0 15px 25px var(--shadow-color);
   background:#d9e0ff;
+}
+body.night-mode .card:hover {
+  background:#2a2a2a;
 }
 .card .emoji {
   font-size:30px;
@@ -100,6 +117,10 @@ h2 {margin-top:0;text-align:center;color:var(--bg2)}
   z-index:1000;
   transition:transform 0.3s;
 }
+body.night-mode .settings-toggle {
+  background:#333;
+  color:#fff;
+}
 .settings-toggle:hover {transform:rotate(180deg);}
 
 .settings-panel {
@@ -115,9 +136,226 @@ h2 {margin-top:0;text-align:center;color:var(--bg2)}
   z-index:999;
   overflow-y:auto;
 }
+body.night-mode .settings-panel {
+  background:#2a2a2a;
+  color:#e0e0e0;
+}
 .settings-panel.open {right:0;}
 .settings-panel h3 {margin-top:0;}
 label {display:block;margin:12px 0;font-size:14px}
+body.night-mode label {color:#e0e0e0;}
+
+/* Mini-player */
+.mini-player {
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  width:300px;
+  background:var(--wrapper-bg);
+  border-radius:12px;
+  box-shadow:0 4px 20px var(--shadow-color);
+  padding:15px;
+  z-index:1000;
+  transition:all 0.3s;
+}
+.mini-player.hidden {
+  transform:translateY(150%);
+  opacity:0;
+}
+.mini-player-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+.mini-player-title {
+  font-weight:bold;
+  font-size:14px;
+}
+.mini-player-controls {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.mini-player-btn {
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-size:16px;
+  color:var(--text-color);
+}
+.mini-player-visualization {
+  width:100%;
+  height:60px;
+  background:#000;
+  border-radius:6px;
+  margin-top:10px;
+  overflow:hidden;
+}
+
+/* Playlista */
+.playlist-panel {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:300px;
+  max-height:400px;
+  background:var(--wrapper-bg);
+  border-radius:12px;
+  box-shadow:0 4px 20px var(--shadow-color);
+  padding:15px;
+  z-index:1000;
+  overflow-y:auto;
+  transition:all 0.3s;
+}
+.playlist-panel.hidden {
+  transform:translateY(150%);
+  opacity:0;
+}
+.playlist-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+.playlist-title {
+  font-weight:bold;
+}
+.playlist-list {
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.playlist-item {
+  padding:8px 12px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-bottom:5px;
+  transition:background 0.2s;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.playlist-item:hover {
+  background:rgba(0,0,0,0.1);
+}
+body.night-mode .playlist-item:hover {
+  background:rgba(255,255,255,0.1);
+}
+.playlist-item.active {
+  background:var(--bg1);
+  color:white;
+}
+.playlist-item-remove {
+  background:none;
+  border:none;
+  color:inherit;
+  cursor:pointer;
+  font-size:12px;
+  opacity:0.7;
+}
+.playlist-item-remove:hover {
+  opacity:1;
+}
+
+/* Przyciski przywracania paneli */
+.restore-panels {
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+  z-index:900;
+}
+.restore-btn {
+  background:var(--wrapper-bg);
+  border:none;
+  border-radius:20px;
+  padding:8px 16px;
+  font-size:12px;
+  cursor:pointer;
+  box-shadow:0 2px 8px var(--shadow-color);
+  color:var(--text-color);
+  display:flex;
+  align-items:center;
+  gap:5px;
+  transition:all 0.3s;
+}
+.restore-btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px var(--shadow-color);
+}
+
+/* Equalizer controls */
+.equalizer-controls {
+  background:var(--card-bg);
+  padding:15px;
+  border-radius:10px;
+  margin-top:15px;
+}
+.equalizer-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+.equalizer-title {
+  font-weight:bold;
+  font-size:14px;
+}
+.equalizer-presets {
+  display:flex;
+  gap:5px;
+  margin-bottom:10px;
+  flex-wrap:wrap;
+}
+.equalizer-preset {
+  background:var(--bg1);
+  border:none;
+  border-radius:12px;
+  padding:4px 8px;
+  font-size:10px;
+  color:white;
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.equalizer-preset:hover {
+  opacity:0.8;
+  transform:scale(1.05);
+}
+.equalizer-bands {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  height:120px;
+  margin-bottom:10px;
+  padding:10px;
+  background:rgba(0,0,0,0.1);
+  border-radius:8px;
+}
+.equalizer-band {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  flex:1;
+}
+.equalizer-band-label {
+  font-size:10px;
+  margin-bottom:5px;
+  color:var(--text-color);
+}
+.equalizer-band-slider {
+  writing-mode:bt-lr;
+  -webkit-appearance:slider-vertical;
+  width:20px;
+  height:80px;
+}
+.equalizer-band-value {
+  font-size:10px;
+  margin-top:5px;
+  color:var(--text-color);
+}
 
 /* animacje */
 @keyframes cardIn {
@@ -150,8 +388,77 @@ label {display:block;margin:12px 0;font-size:14px}
       <option value="700">Grube</option>
     </select>
   </label>
-  <label>Dodaj muzykę: <input type="file" id="music" accept="audio/*"></label>
-  <audio id="player" controls style="width:100%;margin-top:10px;"></audio>
+  <label>
+    <input type="checkbox" id="nightMode"> Tryb nocny
+  </label>
+  <label>Otwieraj linki w nowej karcie: 
+    <input type="checkbox" id="openNewTab" checked>
+  </label>
+  <label>Dodaj muzykę: <input type="file" id="music" accept="audio/*" multiple></label>
+  
+  <div class="equalizer-controls">
+    <div class="equalizer-header">
+      <div class="equalizer-title">🎛️ Equalizer</div>
+      <button class="mini-player-btn" onclick="resetEqualizer()">🔄</button>
+    </div>
+    
+    <div class="equalizer-presets">
+      <button class="equalizer-preset" onclick="loadPreset('flat')">Płaski</button>
+      <button class="equalizer-preset" onclick="loadPreset('bass')">Basy</button>
+      <button class="equalizer-preset" onclick="loadPreset('treble')">Wysokie</button>
+      <button class="equalizer-preset" onclick="loadPreset('rock')">Rock</button>
+      <button class="equalizer-preset" onclick="loadPreset('jazz')">Jazz</button>
+      <button class="equalizer-preset" onclick="loadPreset('classical')">Klasyka</button>
+    </div>
+    
+    <div class="equalizer-bands" id="equalizerBands">
+      <!-- Będzie generowane dynamicznie -->
+    </div>
+    
+    <label>Głośność: 
+      <input type="range" id="volume" min="0" max="100" value="50">
+      <span id="volumeVal">50</span>%
+    </label>
+  </div>
+  
+  <audio id="player" style="display:none;"></audio>
+</div>
+
+<div class="mini-player" id="miniPlayer">
+  <div class="mini-player-header">
+    <div class="mini-player-title" id="miniPlayerTitle">Odtwarzacz audio</div>
+    <div class="mini-player-controls">
+      <button class="mini-player-btn" onclick="previousTrack()">⏮️</button>
+      <button class="mini-player-btn" onclick="togglePlayPause()" id="playPauseBtn">⏸️</button>
+      <button class="mini-player-btn" onclick="nextTrack()">⏭️</button>
+      <button class="mini-player-btn" onclick="toggleMiniPlayer()">−</button>
+    </div>
+  </div>
+  <canvas class="mini-player-visualization" id="visualization"></canvas>
+</div>
+
+<div class="playlist-panel" id="playlistPanel">
+  <div class="playlist-header">
+    <div class="playlist-title">🎵 Playlista (<span id="playlistCount">0</span>)</div>
+    <div class="mini-player-controls">
+      <button class="mini-player-btn" onclick="shufflePlaylist()">🔀</button>
+      <button class="mini-player-btn" onclick="clearPlaylist()">🗑️</button>
+      <button class="mini-player-btn" onclick="togglePlaylist()">−</button>
+    </div>
+  </div>
+  <ul class="playlist-list" id="playlist"></ul>
+</div>
+
+<div class="restore-panels" id="restorePanels">
+  <button class="restore-btn" onclick="restoreMiniPlayer()">
+    <span>🎵</span> Odtwarzacz
+  </button>
+  <button class="restore-btn" onclick="restorePlaylist()">
+    <span>📋</span> Playlista
+  </button>
+  <button class="restore-btn" onclick="restoreEqualizer()">
+    <span>🎛️</span> Equalizer
+  </button>
 </div>
 
 <div class="wrapper">
@@ -186,14 +493,34 @@ const subjects=[
   {name:"Niemiecki",emoji:"🇩🇪",url:"niemiecki.html"}
 ];
 
-const grid=document.getElementById("links");
-subjects.forEach((s,i)=>{
-  const div=document.createElement("div");
-  div.className="card";
-  div.innerHTML=`<a href="${s.url}" style="text-decoration:none;color:inherit;"><span class="emoji">${s.emoji}</span>${s.name}</a>`;
-  div.style.animationDelay=(i*0.1)+"s";
-  grid.appendChild(div);
-});
+// Inicjalizacja linków z opcją otwierania w nowej karcie
+const grid = document.getElementById("links");
+const openNewTab = document.getElementById("openNewTab");
+
+function initializeLinks() {
+  grid.innerHTML = '';
+  subjects.forEach((s, i) => {
+    const div = document.createElement("div");
+    div.className = "card";
+    
+    const link = document.createElement("a");
+    link.href = s.url;
+    link.innerHTML = `<span class="emoji">${s.emoji}</span>${s.name}`;
+    link.style.textDecoration = "none";
+    link.style.color = "inherit";
+    link.style.display = "block";
+    
+    // Ustawienie atrybutu target w zależności od ustawienia
+    if (openNewTab.checked) {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    }
+    
+    div.appendChild(link);
+    div.style.animationDelay = (i * 0.1) + "s";
+    grid.appendChild(div);
+  });
+}
 
 function logout(){
   localStorage.removeItem("hasAccess");
@@ -204,15 +531,193 @@ function toggleSettings(){
   document.getElementById("settings").classList.toggle("open");
 }
 
+// Elementy DOM
 const bg1=document.getElementById("bg1");
 const bg2=document.getElementById("bg2");
 const cardBg=document.getElementById("cardBg");
 const fontSize=document.getElementById("fontSize");
 const fontSizeVal=document.getElementById("fontSizeVal");
 const fontWeight=document.getElementById("fontWeight");
+const nightMode=document.getElementById("nightMode");
 const music=document.getElementById("music");
 const player=document.getElementById("player");
+const volume=document.getElementById("volume");
+const volumeVal=document.getElementById("volumeVal");
+const miniPlayer=document.getElementById("miniPlayer");
+const playlistPanel=document.getElementById("playlistPanel");
+const playlist = document.getElementById("playlist");
+const playlistCount = document.getElementById("playlistCount");
+const visualization = document.getElementById("visualization");
+const restorePanels = document.getElementById("restorePanels");
+const equalizerBands = document.getElementById("equalizerBands");
 
+// Kontekst audio i equalizer
+let audioContext;
+let analyser;
+let source;
+let dataArray;
+let bufferLength;
+let canvasCtx = visualization.getContext('2d');
+visualization.width = visualization.clientWidth;
+visualization.height = visualization.clientHeight;
+
+// Equalizer settings
+let equalizerNodes = [];
+const eqFrequencies = [60, 170, 350, 1000, 3500, 10000]; // 6-pasmowy equalizer
+const eqPresets = {
+  flat: [0, 0, 0, 0, 0, 0],
+  bass: [8, 6, 4, 0, -2, -4],
+  treble: [-4, -2, 0, 2, 6, 8],
+  rock: [6, 4, 2, 0, 2, 4],
+  jazz: [4, 2, 0, -2, 0, 2],
+  classical: [0, 0, 0, 2, 4, 6]
+};
+
+// Playlista
+let currentPlaylist = [];
+let currentTrackIndex = 0;
+
+// Inicjalizacja equalizera
+function initializeEqualizer() {
+  equalizerBands.innerHTML = '';
+  eqFrequencies.forEach((freq, index) => {
+    const bandDiv = document.createElement('div');
+    bandDiv.className = 'equalizer-band';
+    
+    const label = document.createElement('div');
+    label.className = 'equalizer-band-label';
+    label.textContent = freq >= 1000 ? (freq/1000).toFixed(1) + 'k' : freq;
+    
+    const slider = document.createElement('input');
+    slider.type = 'range';
+    slider.className = 'equalizer-band-slider';
+    slider.min = '-12';
+    slider.max = '12';
+    slider.value = '0';
+    slider.dataset.index = index;
+    slider.dataset.frequency = freq;
+    
+    const value = document.createElement('div');
+    value.className = 'equalizer-band-value';
+    value.textContent = '0dB';
+    value.id = `eqValue${index}`;
+    
+    slider.addEventListener('input', function() {
+      updateEqualizer();
+      value.textContent = this.value + 'dB';
+    });
+    
+    bandDiv.appendChild(label);
+    bandDiv.appendChild(slider);
+    bandDiv.appendChild(value);
+    equalizerBands.appendChild(bandDiv);
+  });
+}
+
+// Inicjalizacja kontekstu audio
+function initAudioContext() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    analyser = audioContext.createAnalyser();
+    source = audioContext.createMediaElementSource(player);
+    
+    // Tworzenie filtrów equalizera
+    equalizerNodes = [];
+    let lastNode = source;
+    
+    eqFrequencies.forEach(freq => {
+      const filter = audioContext.createBiquadFilter();
+      filter.type = 'peaking';
+      filter.frequency.value = freq;
+      filter.Q.value = 1;
+      filter.gain.value = 0;
+      
+      lastNode.connect(filter);
+      lastNode = filter;
+      equalizerNodes.push(filter);
+    });
+    
+    lastNode.connect(analyser);
+    analyser.connect(audioContext.destination);
+    
+    // Konfiguracja analizatora
+    analyser.fftSize = 256;
+    bufferLength = analyser.frequencyBinCount;
+    dataArray = new Uint8Array(bufferLength);
+    
+    // Rozpoczęcie wizualizacji
+    drawVisualization();
+  }
+}
+
+// Rysowanie wizualizacji
+function drawVisualization() {
+  if (!analyser) return;
+  
+  requestAnimationFrame(drawVisualization);
+  
+  analyser.getByteFrequencyData(dataArray);
+  
+  canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+  canvasCtx.fillRect(0, 0, visualization.width, visualization.height);
+  
+  const barWidth = (visualization.width / bufferLength) * 2.5;
+  let barHeight;
+  let x = 0;
+  
+  for(let i = 0; i < bufferLength; i++) {
+    barHeight = dataArray[i] / 2;
+    
+    // Gradient kolorystyczny w zależności od wysokości
+    const r = Math.min(255, barHeight + 100);
+    const g = Math.min(255, 50 + barHeight / 2);
+    const b = Math.min(255, 150 + barHeight / 3);
+    
+    canvasCtx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+    canvasCtx.fillRect(x, visualization.height - barHeight, barWidth, barHeight);
+    
+    x += barWidth + 1;
+  }
+}
+
+// Aktualizacja equalizera
+function updateEqualizer() {
+  if (!equalizerNodes.length) return;
+  
+  const sliders = document.querySelectorAll('.equalizer-band-slider');
+  sliders.forEach((slider, index) => {
+    if (equalizerNodes[index]) {
+      equalizerNodes[index].gain.value = parseFloat(slider.value);
+    }
+  });
+  saveSettings();
+}
+
+// Ładowanie presetów equalizera
+function loadPreset(presetName) {
+  if (!eqPresets[presetName]) return;
+  
+  const sliders = document.querySelectorAll('.equalizer-band-slider');
+  const valueDisplays = document.querySelectorAll('[id^="eqValue"]');
+  
+  eqPresets[presetName].forEach((value, index) => {
+    if (sliders[index]) {
+      sliders[index].value = value;
+      if (valueDisplays[index]) {
+        valueDisplays[index].textContent = value + 'dB';
+      }
+    }
+  });
+  
+  updateEqualizer();
+}
+
+// Reset equalizera
+function resetEqualizer() {
+  loadPreset('flat');
+}
+
+// Aktualizacja ustawień
 function updateStyles(){
   document.documentElement.style.setProperty("--bg1",bg1.value);
   document.documentElement.style.setProperty("--bg2",bg2.value);
@@ -223,24 +728,251 @@ function updateStyles(){
   saveSettings();
 }
 
-[bg1,bg2,cardBg,fontSize,fontWeight].forEach(el=>el.addEventListener("input",updateStyles));
+// Przełączanie trybu nocnego
+function toggleNightMode() {
+  document.body.classList.toggle('night-mode');
+  saveSettings();
+}
 
-music.addEventListener("change", e=>{
-  const file=e.target.files[0];
-  if(file){
-    player.src=URL.createObjectURL(file);
-    player.play();
+// Aktualizacja otwierania w nowych kartach
+function updateLinkBehavior() {
+  initializeLinks();
+  saveSettings();
+}
+
+// Dodawanie utworów do playlisty
+music.addEventListener("change", e => {
+  const files = e.target.files;
+  if (files.length > 0) {
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      currentPlaylist.push({
+        name: file.name.replace(/\.[^/.]+$/, ""), // Usuń rozszerzenie
+        url: URL.createObjectURL(file)
+      });
+    }
+    updatePlaylist();
+    if (currentPlaylist.length === files.length && !player.src) {
+      playTrack(0);
+    }
   }
 });
 
+// Aktualizacja wyświetlania playlisty
+function updatePlaylist() {
+  playlist.innerHTML = '';
+  currentPlaylist.forEach((track, index) => {
+    const li = document.createElement('li');
+    li.className = `playlist-item ${index === currentTrackIndex ? 'active' : ''}`;
+    li.innerHTML = `
+      <span>${track.name}</span>
+      <button class="playlist-item-remove" onclick="event.stopPropagation(); removeFromPlaylist(${index})">✕</button>
+    `;
+    li.addEventListener('click', () => playTrack(index));
+    playlist.appendChild(li);
+  });
+  playlistCount.textContent = currentPlaylist.length;
+}
+
+// Odtwarzanie konkretnego utworu
+function playTrack(index) {
+  if (index >= 0 && index < currentPlaylist.length) {
+    currentTrackIndex = index;
+    player.src = currentPlaylist[index].url;
+    player.play().catch(e => console.log("Autoplay blocked:", e));
+    document.getElementById('miniPlayerTitle').textContent = currentPlaylist[index].name;
+    updatePlaylist();
+    showMiniPlayer();
+    showPlaylist();
+    
+    // Inicjalizacja kontekstu audio po pierwszym odtworzeniu
+    if (!audioContext) {
+      initAudioContext();
+    }
+  }
+}
+
+// Następny utwór
+function nextTrack() {
+  if (currentPlaylist.length > 0) {
+    const nextIndex = (currentTrackIndex + 1) % currentPlaylist.length;
+    playTrack(nextIndex);
+  }
+}
+
+// Poprzedni utwór
+function previousTrack() {
+  if (currentPlaylist.length > 0) {
+    const prevIndex = (currentTrackIndex - 1 + currentPlaylist.length) % currentPlaylist.length;
+    playTrack(prevIndex);
+  }
+}
+
+// Tasowanie playlisty
+function shufflePlaylist() {
+  if (currentPlaylist.length > 1) {
+    for (let i = currentPlaylist.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [currentPlaylist[i], currentPlaylist[j]] = [currentPlaylist[j], currentPlaylist[i]];
+    }
+    // Zachowaj aktualny utwór na pierwszej pozycji
+    const currentTrack = currentPlaylist.splice(currentTrackIndex, 1)[0];
+    currentPlaylist.unshift(currentTrack);
+    currentTrackIndex = 0;
+    updatePlaylist();
+    saveSettings();
+  }
+}
+
+// Czyszczenie playlisty
+function clearPlaylist() {
+  if (confirm('Czy na pewno chcesz wyczyścić playlistę?')) {
+    currentPlaylist = [];
+    currentTrackIndex = 0;
+    player.pause();
+    player.src = '';
+    updatePlaylist();
+    saveSettings();
+  }
+}
+
+// Usuwanie z playlisty
+function removeFromPlaylist(index) {
+  currentPlaylist.splice(index, 1);
+  if (currentTrackIndex >= index && currentTrackIndex > 0) {
+    currentTrackIndex--;
+  }
+  if (currentPlaylist.length === 0) {
+    player.pause();
+    player.src = '';
+    miniPlayer.classList.add('hidden');
+  } else {
+    updatePlaylist();
+    if (index === currentTrackIndex) {
+      playTrack(currentTrackIndex);
+    }
+  }
+  saveSettings();
+}
+
+// Przełączanie odtwarzania/pauzy
+function togglePlayPause() {
+  if (player.paused) {
+    player.play().catch(e => console.log("Play failed:", e));
+    document.getElementById('playPauseBtn').textContent = '⏸️';
+  } else {
+    player.pause();
+    document.getElementById('playPauseBtn').textContent = '▶️';
+  }
+}
+
+// Pokazywanie/ukrywanie mini-playera
+function toggleMiniPlayer() {
+  miniPlayer.classList.toggle('hidden');
+  updateRestoreButtons();
+  saveSettings();
+}
+
+// Pokazywanie/ukrywanie playlisty
+function togglePlaylist() {
+  playlistPanel.classList.toggle('hidden');
+  updateRestoreButtons();
+  saveSettings();
+}
+
+// Automatyczne pokazywanie mini-playera i playlisty
+function showMiniPlayer() {
+  miniPlayer.classList.remove('hidden');
+  updateRestoreButtons();
+}
+
+function showPlaylist() {
+  playlistPanel.classList.remove('hidden');
+  updateRestoreButtons();
+}
+
+// Przywracanie paneli
+function restoreMiniPlayer() {
+  miniPlayer.classList.remove('hidden');
+  updateRestoreButtons();
+  saveSettings();
+}
+
+function restorePlaylist() {
+  playlistPanel.classList.remove('hidden');
+  updateRestoreButtons();
+  saveSettings();
+}
+
+function restoreEqualizer() {
+  document.getElementById('settings').classList.add('open');
+}
+
+// Aktualizacja przycisków przywracania
+function updateRestoreButtons() {
+  const miniHidden = miniPlayer.classList.contains('hidden');
+  const playlistHidden = playlistPanel.classList.contains('hidden');
+  
+  // Pokazuj przyciski tylko jeśli jakieś panele są ukryte
+  restorePanels.style.display = (miniHidden || playlistHidden) ? 'flex' : 'none';
+}
+
+// Obsługa zdarzeń odtwarzacza
+player.addEventListener('play', () => {
+  document.getElementById('playPauseBtn').textContent = '⏸️';
+  if (!audioContext) {
+    initAudioContext();
+  }
+});
+
+player.addEventListener('pause', () => {
+  document.getElementById('playPauseBtn').textContent = '▶️';
+});
+
+player.addEventListener('ended', () => {
+  // Automatyczne przejście do następnego utworu
+  if (currentTrackIndex < currentPlaylist.length - 1) {
+    playTrack(currentTrackIndex + 1);
+  } else {
+    document.getElementById('playPauseBtn').textContent = '▶️';
+  }
+});
+
+player.addEventListener('volumechange', () => {
+  volume.value = player.volume * 100;
+  volumeVal.textContent = volume.value;
+});
+
+// Obsługa zmiany głośności
+volume.addEventListener('input', () => {
+  player.volume = volume.value / 100;
+  volumeVal.textContent = volume.value;
+  saveSettings();
+});
+
+// Zapisywanie ustawień
 function saveSettings(){
+  const eqValues = Array.from(document.querySelectorAll('.equalizer-band-slider')).map(s => s.value);
+  
   const settings={
-    bg1:bg1.value,bg2:bg2.value,cardBg:cardBg.value,
-    fontSize:fontSize.value,fontWeight:fontWeight.value
+    bg1:bg1.value,
+    bg2:bg2.value,
+    cardBg:cardBg.value,
+    fontSize:fontSize.value,
+    fontWeight:fontWeight.value,
+    nightMode:nightMode.checked,
+    openNewTab:openNewTab.checked,
+    volume:volume.value,
+    eqValues:eqValues,
+    miniPlayerHidden:miniPlayer.classList.contains('hidden'),
+    playlistHidden:playlistPanel.classList.contains('hidden'),
+    playlist:currentPlaylist.map(track => ({name: track.name, url: track.url})),
+    currentTrackIndex:currentTrackIndex
   };
   localStorage.setItem("panel-settings",JSON.stringify(settings));
 }
 
+// Ładowanie ustawień
 function loadSettings(){
   const s=JSON.parse(localStorage.getItem("panel-settings")||"{}");
   if(s.bg1){bg1.value=s.bg1;document.documentElement.style.setProperty("--bg1",s.bg1);}
@@ -248,8 +980,49 @@ function loadSettings(){
   if(s.cardBg){cardBg.value=s.cardBg;document.documentElement.style.setProperty("--card-bg",s.cardBg);}
   if(s.fontSize){fontSize.value=s.fontSize;document.documentElement.style.setProperty("--font-size",s.fontSize+"px");fontSizeVal.textContent=s.fontSize;}
   if(s.fontWeight){fontWeight.value=s.fontWeight;document.documentElement.style.setProperty("--font-weight",s.fontWeight);}
+  if(s.nightMode){nightMode.checked=s.nightMode;if(s.nightMode) document.body.classList.add('night-mode');}
+  if(s.openNewTab !== undefined){openNewTab.checked=s.openNewTab;}
+  if(s.volume){volume.value=s.volume;player.volume=s.volume/100;volumeVal.textContent=s.volume;}
+  if(s.eqValues){
+    const sliders = document.querySelectorAll('.equalizer-band-slider');
+    const valueDisplays = document.querySelectorAll('[id^="eqValue"]');
+    s.eqValues.forEach((value, index) => {
+      if(sliders[index]) {
+        sliders[index].value = value;
+        if(valueDisplays[index]) {
+          valueDisplays[index].textContent = value + 'dB';
+        }
+      }
+    });
+  }
+  if(s.miniPlayerHidden && s.miniPlayerHidden === true){miniPlayer.classList.add('hidden');}
+  if(s.playlistHidden && s.playlistHidden === true){playlistPanel.classList.add('hidden');}
+  if(s.playlist){currentPlaylist=s.playlist;}
+  if(s.currentTrackIndex !== undefined){currentTrackIndex=s.currentTrackIndex;}
+  
+  updateEqualizer();
+  updatePlaylist();
+  updateRestoreButtons();
+  initializeLinks();
 }
+
+// Inicjalizacja
+initializeEqualizer();
+initializeLinks();
+
+[bg1,bg2,cardBg,fontSize,fontWeight].forEach(el=>el.addEventListener("input",updateStyles));
+nightMode.addEventListener("change", toggleNightMode);
+openNewTab.addEventListener("change", updateLinkBehavior);
 loadSettings();
+
+// Obsługa zmiany rozmiaru okna
+window.addEventListener('resize', () => {
+  visualization.width = visualization.clientWidth;
+  visualization.height = visualization.clientHeight;
+});
+
+// Automatyczne zapisywanie co 10 sekund
+setInterval(saveSettings, 10000);
 </script>
 </body>
 </html>
