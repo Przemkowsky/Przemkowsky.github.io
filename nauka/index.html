@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dostęp</title>
+<style>
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#4e54c8,#8f94fb);
+  font-family:"Segoe UI",sans-serif;
+}
+.card {
+  background:#fff;
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+  text-align:center;
+  animation:fadeIn 0.8s ease;
+}
+h2 {margin:0 0 20px;color:#333}
+input {
+  padding:12px;
+  width:220px;
+  border:2px solid #ddd;
+  border-radius:8px;
+  outline:none;
+  transition:0.2s;
+}
+input:focus {
+  border-color:#4e54c8;
+}
+button {
+  margin-top:15px;
+  padding:12px 20px;
+  background:#4e54c8;
+  color:#fff;
+  border:0;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+}
+button:hover {
+  background:#3c40a2;
+}
+.error {
+  margin-top:12px;
+  color:#c00;
+  font-weight:500;
+}
+@keyframes fadeIn {
+  from {opacity:0;transform:translateY(-20px);}
+  to {opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h2>Podaj kod dostępu</h2>
+  <input id="accessCode" placeholder="Kod"><br>
+  <button onclick="checkCode()">Wejdź</button>
+  <div class="error" id="err"></div>
+</div>
+
+<script>
+const input=document.getElementById("accessCode");
+input.addEventListener("keypress",e=>{
+  if(e.key==="Enter"){checkCode();}
+});
+function checkCode(){
+  const code=input.value.trim();
+  if(code==="krynio"){
+    localStorage.setItem("hasAccess","true");
+    window.location="dashboard.html";
+  } else {
+    document.getElementById("err").textContent="❌ Nieprawidłowy kod!";
+  }
+}
+</script>
+</body>
+</html>

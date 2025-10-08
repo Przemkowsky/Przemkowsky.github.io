@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Historia</title>
+  <style>
+    :root {
+      --card-bg: #162447;
+      --font-color: #fff;
+    }
+    body {
+      margin:0;
+      font-family:sans-serif;
+      background: linear-gradient(120deg,#1a1a2e,#162447,#1f4068,#e43f5a);
+      background-size:400% 400%;
+      animation:gradientAnim 15s ease infinite;
+      color: var(--font-color);
+    }
+    @keyframes gradientAnim {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:10px 20px;
+      background: rgba(0,0,0,0.3);
+      border-bottom: 2px solid #fff;
+    }
+    header h1 {margin:0;}
+    header a {
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
+      background: #e43f5a;
+      padding:5px 10px;
+      border-radius:8px;
+    }
+    main {
+      padding:20px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+    section {
+      background: var(--card-bg);
+      padding:20px;
+      border-radius:15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    section h2 {
+      text-align:center;
+      margin-bottom:15px;
+      border-bottom:1px solid #fff;
+      padding-bottom:5px;
+    }
+    ul {list-style:none; padding:0;}
+    li {margin:10px 0; display:flex; align-items:center; justify-content:space-between;}
+    a {
+      color: #fff;
+      text-decoration:none;
+      transition:0.3s;
+    }
+    a:hover {color:#e43f5a;}
+    .download-link {
+      margin-left:10px;
+      color:#fff;
+      text-decoration:none;
+      font-size:18px;
+    }
+    .download-link:hover {color:#e43f5a;}
+    .dodatki {grid-column:1 / -1;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Historia</h1>
+    <a href="dashboard.html">⬅ Powrót</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sprawdziany i Kartkówki</h2>
+      <ul>
+
+      </ul>
+    </section>
+
+    <section>
+      <h2>Notatki</h2>
+      <ul>
+        
+      </ul>
+    </section>
+
+    <section class="dodatki">
+      <h2>Materiały do nauki</h2>
+      <ul>
+
+      </ul>
+    </section>
+
+        <section>
+      <h2>Wszystkie zrealizowane tematy</h2>
+      <ul>
+        <li>
+          <a>1. Wielkie odkrycia geograficzne</a>
+        </li>
+                <li>
+          <a>2. Podboje kolonialne</a>
+        </li>
+                <li>
+          <a>3. Przemiany społeczno-gospodarcze w XVI wieku</a>
+        </li>
+                <li>
+          <a>4. Kultura i sztuka renesansu</a>
+        </li>
+      <li>
+          <a>5. Reformacje w Europie</a>
+     </li>
+           <li>
+          <a>6. Kontrreformacja</a>
+     </li>
+     <li>
+      <a>7. Potęgi europejskie w XVI wieku</a>
+     </li>
+     <li>
+      <a>8. Podsumowanie rozdziału 1</a>
+     </li>
+     <li>
+      <a>9. Polityka międzynarodowa ostatnich Jagiellonów</a>
+     </li>
+     <li>
+      <a>10. Powtórzenie wiadomości</a>
+     </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Panel</title>
+<style>
+:root {
+  --bg1:#8f94fb;
+  --bg2:#4e54c8;
+  --card-bg:#f0f3ff;
+  --font-size:16px;
+  --font-weight:600;
+}
+body {
+  margin:0;
+  font-family:"Segoe UI",sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  min-height:100vh;
+  padding:40px;
+  font-size:var(--font-size);
+  font-weight:var(--font-weight);
+  overflow-x:hidden;
+  background-size:400% 400%;
+  animation:gradientBG 15s ease infinite;
+}
+.wrapper {
+  max-width:1000px;
+  margin:0 auto;
+  background:rgba(255,255,255,0.95);
+  color:#333;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+h2 {margin-top:0;text-align:center;color:var(--bg2)}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  margin-top:25px;
+}
+.card {
+  background:var(--card-bg);
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  cursor:pointer;
+  transform:rotateY(90deg) scale(0.7);
+  opacity:0;
+  animation:cardIn 0.8s forwards;
+  box-shadow:0 6px 12px rgba(0,0,0,0.15);
+  transition:0.3s transform,0.3s box-shadow;
+  position:relative;
+  overflow:hidden;
+}
+.card:hover {
+  transform:rotateY(0deg) scale(1.05) translateY(-10px);
+  box-shadow:0 15px 25px rgba(0,0,0,0.3);
+  background:#d9e0ff;
+}
+.card .emoji {
+  font-size:30px;
+  display:block;
+  transition:transform 0.6s ease;
+}
+.card:hover .emoji {
+  transform:translateY(-10px) rotate(-15deg);
+}
+.card:nth-child(odd){animation-delay:0.2s}
+.card:nth-child(even){animation-delay:0.4s}
+
+.logout {
+  margin-top:30px;
+  display:block;
+  padding:10px 16px;
+  border:0;
+  border-radius:8px;
+  background:#ff4d4d;
+  color:#fff;
+  cursor:pointer;
+  transition:0.2s;
+}
+.logout:hover {background:#cc0000}
+
+/* zębatka */
+.settings-toggle {
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#fff;
+  border-radius:50%;
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  z-index:1000;
+  transition:transform 0.3s;
+}
+.settings-toggle:hover {transform:rotate(180deg);}
+
+.settings-panel {
+  position:fixed;
+  top:0;
+  right:-320px;
+  width:300px;
+  height:100%;
+  background:#f7f7f7;
+  box-shadow:-4px 0 12px rgba(0,0,0,0.3);
+  padding:20px;
+  transition:right 0.4s ease;
+  z-index:999;
+  overflow-y:auto;
+}
+.settings-panel.open {right:0;}
+.settings-panel h3 {margin-top:0;}
+label {display:block;margin:12px 0;font-size:14px}
+
+/* animacje */
+@keyframes cardIn {
+  0% {opacity:0;transform:rotateY(90deg) scale(0.7);}
+  50% {opacity:1;transform:rotateY(-10deg) scale(1.05);}
+  100% {opacity:1;transform:rotateY(0deg) scale(1);}
+}
+@keyframes gradientBG {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+</style>
+</head>
+<body>
+<div class="settings-toggle" onclick="toggleSettings()">⚙️</div>
+<div class="settings-panel" id="settings">
+  <h3>⚙️ Ustawienia</h3>
+  <label>Kolor tła 1: <input type="color" id="bg1" value="#8f94fb"></label>
+  <label>Kolor tła 2: <input type="color" id="bg2" value="#4e54c8"></label>
+  <label>Kolor kart: <input type="color" id="cardBg" value="#f0f3ff"></label>
+  <label>Rozmiar czcionki: 
+    <input type="range" id="fontSize" min="12" max="24" value="16">
+    <span id="fontSizeVal">16</span>px
+  </label>
+  <label>Grubość liter: 
+    <select id="fontWeight">
+      <option value="400">Normalne</option>
+      <option value="600" selected>Półgrube</option>
+      <option value="700">Grube</option>
+    </select>
+  </label>
+  <label>Dodaj muzykę: <input type="file" id="music" accept="audio/*"></label>
+  <audio id="player" controls style="width:100%;margin-top:10px;"></audio>
+</div>
+
+<div class="wrapper">
+  <h2>📚 Witaj w panelu</h2>
+  <div class="grid" id="links"></div>
+  <button class="logout" onclick="logout()">Wyloguj</button>
+</div>
+
+<script>
+if(localStorage.getItem("hasAccess")!=="true"){
+  window.location="index.html";
+}
+
+const subjects=[
+  {name:"Informatyka",emoji:"💻",url:"informatyka.html"},
+  {name:"Witryny pracownia",emoji:"🖥️",url:"witryny_pracownia.html"},
+  {name:"Witryny wykłady",emoji:"📄",url:"witryny_wyklady.html"},
+  {name:"Bazy danych pracownia",emoji:"🗄️",url:"bazy_danych_pracownia.html"},
+  {name:"Bazy danych wykłady",emoji:"📚",url:"bazy_danych_wyklady.html"},
+  {name:"Geografia",emoji:"🌍",url:"geografia.html"},
+  {name:"Podstawy informatyki",emoji:"🧩",url:"podstawy_informatyki.html"},
+  {name:"Angielski",emoji:"🇬🇧",url:"angielski.html"},
+  {name:"Chemia",emoji:"⚗️",url:"chemia.html"},
+  {name:"WF",emoji:"🏃‍♂️",url:"wf.html"},
+  {name:"Matematyka",emoji:"➗",url:"matematyka.html"},
+  {name:"Programowanie obiektowe pracownia",emoji:"🧑‍💻",url:"programowanie_obiektowe_pracownia.html"},
+  {name:"Programowanie obiektowe wykłady",emoji:"📝",url:"programowanie_obiektowe_wyklady.html"},
+  {name:"Edukacja obywatelska",emoji:"🏛️",url:"edukacja_obywatelska.html"},
+  {name:"Biznes i zarządzanie",emoji:"💼",url:"biznes_i_zarzadzanie.html"},
+  {name:"Polski",emoji:"📖",url:"polski.html"},
+  {name:"Historia",emoji:"🏺",url:"historia.html"},
+  {name:"Niemiecki",emoji:"🇩🇪",url:"niemiecki.html"}
+];
+
+const grid=document.getElementById("links");
+subjects.forEach((s,i)=>{
+  const div=document.createElement("div");
+  div.className="card";
+  div.innerHTML=`<a href="${s.url}" style="text-decoration:none;color:inherit;"><span class="emoji">${s.emoji}</span>${s.name}</a>`;
+  div.style.animationDelay=(i*0.1)+"s";
+  grid.appendChild(div);
+});
+
+function logout(){
+  localStorage.removeItem("hasAccess");
+  window.location="index.html";
+}
+
+function toggleSettings(){
+  document.getElementById("settings").classList.toggle("open");
+}
+
+const bg1=document.getElementById("bg1");
+const bg2=document.getElementById("bg2");
+const cardBg=document.getElementById("cardBg");
+const fontSize=document.getElementById("fontSize");
+const fontSizeVal=document.getElementById("fontSizeVal");
+const fontWeight=document.getElementById("fontWeight");
+const music=document.getElementById("music");
+const player=document.getElementById("player");
+
+function updateStyles(){
+  document.documentElement.style.setProperty("--bg1",bg1.value);
+  document.documentElement.style.setProperty("--bg2",bg2.value);
+  document.documentElement.style.setProperty("--card-bg",cardBg.value);
+  document.documentElement.style.setProperty("--font-size",fontSize.value+"px");
+  document.documentElement.style.setProperty("--font-weight",fontWeight.value);
+  fontSizeVal.textContent=fontSize.value;
+  saveSettings();
+}
+
+[bg1,bg2,cardBg,fontSize,fontWeight].forEach(el=>el.addEventListener("input",updateStyles));
+
+music.addEventListener("change", e=>{
+  const file=e.target.files[0];
+  if(file){
+    player.src=URL.createObjectURL(file);
+    player.play();
+  }
+});
+
+function saveSettings(){
+  const settings={
+    bg1:bg1.value,bg2:bg2.value,cardBg:cardBg.value,
+    fontSize:fontSize.value,fontWeight:fontWeight.value
+  };
+  localStorage.setItem("panel-settings",JSON.stringify(settings));
+}
+
+function loadSettings(){
+  const s=JSON.parse(localStorage.getItem("panel-settings")||"{}");
+  if(s.bg1){bg1.value=s.bg1;document.documentElement.style.setProperty("--bg1",s.bg1);}
+  if(s.bg2){bg2.value=s.bg2;document.documentElement.style.setProperty("--bg2",s.bg2);}
+  if(s.cardBg){cardBg.value=s.cardBg;document.documentElement.style.setProperty("--card-bg",s.cardBg);}
+  if(s.fontSize){fontSize.value=s.fontSize;document.documentElement.style.setProperty("--font-size",s.fontSize+"px");fontSizeVal.textContent=s.fontSize;}
+  if(s.fontWeight){fontWeight.value=s.fontWeight;document.documentElement.style.setProperty("--font-weight",s.fontWeight);}
+}
+loadSettings();
+</script>
+</body>
+</html>
