@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Witryny pracownia</title>
+  <style>
+    :root {
+      --card-bg: #162447;
+      --font-color: #fff;
+    }
+    body {
+      margin:0;
+      font-family:sans-serif;
+      background: linear-gradient(120deg,#1a1a2e,#162447,#1f4068,#e43f5a);
+      background-size:400% 400%;
+      animation:gradientAnim 15s ease infinite;
+      color: var(--font-color);
+    }
+    @keyframes gradientAnim {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:10px 20px;
+      background: rgba(0,0,0,0.3);
+      border-bottom: 2px solid #fff;
+    }
+    header h1 {margin:0;}
+    header a {
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
+      background: #e43f5a;
+      padding:5px 10px;
+      border-radius:8px;
+    }
+    main {
+      padding:20px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+    section {
+      background: var(--card-bg);
+      padding:20px;
+      border-radius:15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    section h2 {
+      text-align:center;
+      margin-bottom:15px;
+      border-bottom:1px solid #fff;
+      padding-bottom:5px;
+    }
+    ul {list-style:none; padding:0;}
+    li {margin:10px 0; display:flex; align-items:center; justify-content:space-between;}
+    a {
+      color: #fff;
+      text-decoration:none;
+      transition:0.3s;
+    }
+    a:hover {color:#e43f5a;}
+    .download-link {
+      margin-left:10px;
+      color:#fff;
+      text-decoration:none;
+      font-size:18px;
+    }
+    .download-link:hover {color:#e43f5a;}
+    .dodatki {grid-column:1 / -1;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Witryny I Aplikacje Internetowe - Pracownia</h1>
+    <a href="dashboard.html">⬅ Powrót</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sprawdziany i Kartkówki</h2>
+      <ul>
+        <li>
+          <a>Niezapowiedziana kartkówka z zadań od 1 do 16</a>
+          <a download class="download-link">❌</a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Instrukcje</h2>
+      <ul>
+                 <li>
+          <a href="INST_HTM_technik_2024.pdf" target="_blank">Instrukcja HTML </a>
+          <a href="INST_HTM_technik_2024.pdf" download class="download-link">⬇️</a>
+        </li>
+                 <li>
+          <a href="zagadnienia_na_test_z_html_ABCD.pdf" target="_blank">Zagadnienia na test z HTML ABCD  </a>
+          <a href="zagadnienia_na_test_z_html_ABCD.pdf" download class="download-link">⬇️</a>
+        </li>
+                 <li>
+          <a href="zagadnienia_JS_obiektowe_na_test.pdf" target="_blank">Zagadnienia JS obiektowe na test  </a>
+          <a href="zagadnienia_JS_obiektowe_na_test.pdf" download class="download-link">⬇️</a>
+        </li>
+                 <li>
+          <a href="spr_htm_pierwszy_2024_25.pdf" target="_blank">Sprawdzian z HTML, pierwszy 2024/25  </a>
+          <a href="spr_htm_pierwszy_2024_25.pdf" download class="download-link">⬇️</a>
+        </li>
+                 <li>
+          <a href="modelu_pudełkowego_zagadnienia_test_ABCD.pdf" target="_blank">Model pudełkowy, zagadnienia na test ABCD  </a>
+          <a href="modelu_pudełkowego_zagadnienia_test_ABCD.pdf" download class="download-link">⬇️</a>
+        </li>
+                 <li>
+          <a href="instrukcja_css.pdf" target="_blank">Instrukcja CSS </a>
+          <a href="instrukcja_css.pdf" download class="download-link">⬇️</a>
+        </li>
+                 <li>
+          <a href="instr_JavaScript_wiosna.pdf" target="_blank">Instrukcja JavaScript wiosna </a>
+          <a href="instr_JavaScript_wiosna.pdf" download class="download-link">⬇️</a>
+        </li>
+                 <li>
+          <a href="instr_JavaScript_25_26.pdf" target="_blank">Instrukcja JavaScript 2025/26 old</a>
+          <a href="instr_JavaScript_25_26.pdf" download class="download-link">⬇️</a>
+        </li>
+                 <li>
+          <a href="instr_JavaScript_24_25.pdf" target="_blank">Instrukcja JavaScript 2024/25 old  </a>
+          <a href="instr_JavaScript_24_25.pdf" download class="download-link">⬇️</a>
+        </li>
+                 <li>
+          <a href="instr_JavaScript_25_26 (1).pdf" target="_blank">Instrukcja JavaScript 2025/26 new  </a>
+          <a href="instr_JavaScript_25_26 (1).pdf" download class="download-link">⬇️</a>
+        </li>
+                
+      </ul>
+    </section>
+
+        <section>
+      <h2>Terminy wysłania maila</h2>
+      <ul>
+        <li>
+          <a>1. Zadania od 1 do 16, termin wysłania: 01.10.2025 20:00, Temat maila: "nazwisko_klasa_grupa_z1_16_do_1_10_g20"</a>
+        </li>
+      </ul>
+    </section>
+
+        <section>
+      <h2>Wszystkie zrealizowane tematy</h2>
+      <ul>
+        <li>
+          <a>1. Pojęcia HTML, XML, XHTML. Rodzaje znaczników i ich atrybuty. Szablon (budowa) strony w HTML. Edytor stron WWW.</a>
+        </li>
+                <li>
+          <a>2. Nazwa pliku startowego stron WWW. Uzycie znaczników, definiowanie akapitów, formatowanie tekstu, rodzaje czcionek, pogrubienia, wielkość, wyrównanie w lewo, prawo, center, justowanie, kolor tekstu. </a>
+        </li>
+                <li>
+          <a>3. Składnia języka JavaScript Struktura języka JavaScript. Obiekty DOM. Hierarchia obiektów DOM. Umieszczenie kodu JavaScript w dokumencie HTML.</a>
+        </li>
+                <li>
+          <a>4. Obiekt Window oraz jego metody. Praca z oknami w JavaScript (window.open, window.close i inne instrukcje związane z oknami)</a>
+        </li>
+      <li>
+          <a>5. Praca z obiektem Window, prosta aplikacja uczniowska korzystająca z okienek.</a>
+     </li>
+           <li>
+          <a>6. Rodzaje okienek: okienko alert, okienko prompt, okienko confirm w JS. Wykorzystanie okienek.</a>
+     </li>
+             <li>
+          <a>7. Typy danych JavaScript. Zmienne i ich nazwy oraz ich zastosowanie. Operatory arytmetyczne, porównania, bitowe, logiczne, przypisania.</a>
+        </li>
+                <li>
+          <a>8. Wprowadzenie danych do skryptu w JavaScript</a>
+        </li>
+                <li>
+          <a>9. Dobieranie odpowiednich typów danych oraz deklarowanie stałych i zmiennych potrzebnych do rozwiązywania zasad.</a>
+        </li>
+                <li>
+          <a>10. Konwersja liczb: parseFloat(zmienna), parselnt(zmienna), toString(zmienna). Obliczenia. Użycie obiektu Math.</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
