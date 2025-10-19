@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zadanie 23</title>
+        <meta charset="UTF-8">
+        <script>
+            var x, d;
+            function drabinka(x, d){
+                var x_gal = parseFloat(x);
+                var d_gal = parseFloat(d);
+                var drabina = (x_gal*x_gal) + (d_gal*d_gal);
+                drabina = Math.sqrt(drabina);
+                document.getElementById("pokaz_drabina").value=drabina.toFixed(2);
+            }
+            function alfka(x, d){
+                var x_gal = parseFloat(x);
+                var d_gal = parseFloat(d);
+                var alfa = Math.atan(d_gal / x_gal);
+                var stopnie = alfa * (180 / Math.PI);
+                document.getElementById("pokaz_alfa").value=stopnie.toFixed(2);
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="drabinka(this.x.value, this.d.value); alfka(this.x.value, this.d.value); return false">
+            <p>Obliczanie odległości od drabiny i kąta</p>
+            Podaj d=
+            <input type="text" name="d" size="4">
+            Podaj x=
+            <input type="text" name="x" size="4">
+            <br><br>
+            <input type="submit" name="oblicz" value="oblicz">
+            <br><br>
+
+            Drabina= <input type="text" readonly id="pokaz_drabina" size="4"> 
+            Alfa= <input type="text" readonly id="pokaz_alfa" size="4">
+        </form>
+    </body>
+</html>

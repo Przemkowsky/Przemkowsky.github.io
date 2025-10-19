@@ -1,0 +1,30 @@
+<!-- Przemysław Gałęziowski 2P -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Rozpad promieniotwórczy</title>
+</head>
+<body style="color: blue; font-size: 20px;">
+
+<script>
+// Przemysław Gałęziowski 2P
+
+
+let No = parseFloat(prompt("Podaj ilość początkową atomów No [sztuk]:"));
+let t = parseFloat(prompt("Podaj czas t [lata]:"));
+let Tpol = parseFloat(prompt("Podaj okres połowicznego zaniku T1/2 [lata]:"));
+
+
+let lambda = Math.log(2) / Tpol;
+let N = No * Math.pow(Math.E, -lambda * t);
+
+document.write("N0=" + No.toFixed(0) + "[sztuk]<br>");
+document.write("t=" + t.toFixed(0) + "[lat]<br>");
+document.write("T1/2=" + Tpol.toFixed(0) + "[lat]<br>");
+document.write("Lambda=" + lambda.toFixed(7) + "[1/rok]<br>");
+document.write("N=" + N.toFixed(7) + "[sztuk]");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Zadanie 20 - kod</title>
+    </head>
+    <body>
+        <center>
+        <h1>Zadanie 20 kod: </h1>
+        <textarea readonly rows="40" cols="100"><html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 20</title>
+</head>
+<body>
+<p>Podaj x punktu A: <input type="text" id="x1"></p>
+<p>Podaj y punktu A: <input type="text" id="y1"></p>
+<p>Podaj x punktu B: <input type="text" id="x2"></p>
+<p>Podaj y punktu B: <input type="text" id="y2"></p>
+<p>Podaj x punktu C: <input type="text" id="x3"></p>
+<p>Podaj y punktu C: <input type="text" id="y3"></p>
+<input type="button" value="Oblicz D1" onclick="AB_gal()"><br><br>
+<input type="button" value="Oblicz D2" onclick="BC_gal()"><br><br>
+<input type="button" value="Oblicz D3" onclick="AC_gal()"><br><br>
+<script>
+function AB_gal() {
+    var x1_gal = parseFloat(document.getElementById("x1").value);
+    var y1_gal = parseFloat(document.getElementById("y1").value);
+    var x2_gal = parseFloat(document.getElementById("x2").value);
+    var y2_gal = parseFloat(document.getElementById("y2").value);
+    var d1_gal = Math.sqrt(Math.pow((x1_gale - x2_gal), 2) + Math.pow((y1_gal - y2_gal), 2));
+    document.write("D1 = "+ d1_gal.toFixed(2));}
+function BC_gal() {
+    var x2_gal = parseFloat(document.getElementById("x2").value);
+    var y2_gal = parseFloat(document.getElementById("y2").value);
+    var x3_gal = parseFloat(document.getElementById("x3").value);
+    var y3_gal = parseFloat(document.getElementById("y3").value);
+    var d2_gal = Math.sqrt(Math.pow((x2_gal - x3_gal), 2) + Math.pow((y2_gal - y3_gal), 2));
+    document.write("D2 = "+ d2_gal.toFixed(2));}
+function AC_gal() {
+    var x1_gal = parseFloat(document.getElementById("x1").value);
+    var y1_gal = parseFloat(document.getElementById("y1").value);
+    var x3_gal = parseFloat(document.getElementById("x3").value);
+    var y3_gal = parseFloat(document.getElementById("y3").value);
+    var d3_gal = Math.sqrt(Math.pow((x1_gal - x3_gal), 2) + Math.pow((y1_gal - y3_gal), 2));
+    document.write("D3 = "+ d3_gal.toFixed(2));}
+</script>
+</body>
+</html></textarea>
+        </center>
+    </body>
+</html>

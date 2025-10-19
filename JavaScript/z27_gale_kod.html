@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Zadanie 27 - kod</title>
+    </head>
+    <body>
+        <center>
+        <h1>Zadanie 27 kod: </h1>
+        <textarea readonly rows="48" cols="100"><!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Obliczanie wysokości i kąta samolotu</title>
+</head>
+<body>
+
+<h2>Obliczanie wysokości i kąta startu samolotu</h2>
+
+<form id="samolotForm">
+    Odległość Artura od Dawida: <input type="number" id="odl_gal" step="any" required><br><br>
+    Droga przebyta przez samolot nad Dawidem: <input type="number" id="s_gal" step="any" required><br><br>
+    <button type="button" onclick="oblicz()">Oblicz</button>
+</form>
+
+<h3>Wyniki:</h3>
+<p id="wynik"></p>
+
+<script>
+// Gałęziowski Przemysław 2P
+function obliczWysokosc(odl_gal, kat_rad) {
+    return odl_gal * Math.tan(kat_rad);
+}
+
+
+function obliczKat(odl_gal, s_gal) {
+    let kat_rad = Math.atan(s_gal / odl_gal);
+    return kat_rad * 180 / Math.PI;
+}
+
+function oblicz() {
+    const odl_gal = parseFloat(document.getElementById('odl_gal').value);
+    const s_gal = parseFloat(document.getElementById('s_gal').value);
+
+    const kat_gal = obliczKat(odl_gal, s_gal);
+    const kat_rad = kat_gal * Math.PI / 180;
+    const h_gal = obliczWysokosc(odl_gal, kat_rad);
+
+    document.getElementById('wynik').innerHTML =
+        `Wysokość samolotu nad Dawidem: ${h_gal.toFixed(2)}<br>` +
+        `Kąt startu samolotu: ${kat_gal.toFixed(2)}°`;
+}
+</script>
+
+</body>
+</html>
+</textarea>
+        </center>
+    </body>
+</html>

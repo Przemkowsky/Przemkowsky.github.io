@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Zadanie 26 - kod</title>
+    </head>
+    <body>
+        <center>
+        <h1>Zadanie 26 kod: </h1>
+        <textarea readonly rows="48" cols="100"><!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Trapez równoramienny</title>
+</head>
+<body style="color: blue; font-size: 20px;">
+
+<h2>Oblicz pole i obwód trapezu równoramiennego</h2>
+
+<form>
+  Górna podstawa (a): <input type="number" id="a"><br><br>
+  Dolna podstawa (b): <input type="number" id="b"><br><br>
+  Wysokość (h): <input type="number" id="h"><br><br>
+  <input type="button" value="Oblicz" onclick="oblicz()">
+</form>
+
+<script>
+// Przemysław Gałeziowski 2P
+
+function Pow_galeziowski(a, b, h) {
+  return ((a + b) * h) / 2;
+}
+
+function Obw_galeziowski(a, b, h) {
+  let r = Math.abs(a - b) / 2;
+  let ramie = Math.sqrt(Math.pow(r, 2) + Math.pow(h, 2));
+  return a + b + 2 * ramie;
+}
+
+function oblicz() {
+  let a = parseFloat(document.getElementById("a").value);
+  let b = parseFloat(document.getElementById("b").value);
+  let h = parseFloat(document.getElementById("h").value);
+
+  let pole = Pow_galeziowski(a, b, h);
+  let obwod = Obw_galeziowski(a, b, h);
+
+  document.write("a=" + a + "[j]<br>");
+  document.write("b=" + b + "[j]<br>");
+  document.write("h=" + h + "[j]<br>");
+  document.write("Pole=" + pole.toFixed(2) + "[j²]<br>");
+  document.write("Obwód=" + obwod.toFixed(2) + "[j]");
+}
+</script>
+
+</body>
+</html>
+</textarea>
+        </center>
+    </body>
+</html>

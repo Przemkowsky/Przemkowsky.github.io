@@ -1,27 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <textarea rows="50" cols="500">
-<!DOCTYPE html>
 <html>
+    <head>
+        <title>Zadanie 19 - kod</title>
+    </head>
+    <body>
+        <center>
+        <h1>Zadanie 19 kod: </h1>
+        <textarea readonly rows="27" cols="100"><html>
 <head>
  <meta charset="UTF-8">
  <link rel="stylesheet" href="styl.css">
 </head>
 <body>
 <script type="text/javascript">
- function pole()
+ function pole_gal()
  {
 var a= parseFloat(document.getElementById('dlugosc').value);
 var b= a*a;
  document.getElementById("nazwa").innerHTML ="Pole kwadratu= "+b.toFixed(2)+" cm^2";
  }
- function obwod()
+ function obwod_gal()
  {
 var a= parseFloat(document.getElementById('dlugosc').value);
 var b= 4*a;
@@ -29,13 +26,12 @@ var b= 4*a;
  }
 </script>
  <h1>Wszystko o KWADRACIE</h1><br><br>
- Podaj długość boku: <input type="text" id="dlugosc" value="podaj długość"> cm<br><br><br>
- <input type="button" name="pole" value="Oblicz pole" Onclick="pole()"><br><br>
- <input type="button" name="obwod" value="Oblicz obwod" Onclick="obwod()"><br><br>
+ Podaj długość boku: <input type="text" id="dlugosc"> cm<br><br><br>
+ <input type="button" name="pole" value="Oblicz pole" Onclick="pole_gal()"><br><br>
+ <input type="button" name="obwod" value="Oblicz obwod" Onclick="obwod_gal()"><br><br>
  <div style="color:red;font-size:50px;"id="nazwa"></div>
 </body>
-</html>
-
-    </textarea>
-</body>
+</html></textarea>
+        </center>
+    </body>
 </html>

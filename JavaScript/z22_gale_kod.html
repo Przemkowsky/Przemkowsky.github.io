@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Zadanie 22 - kod</title>
+    </head>
+    <body>
+        <center>
+        <h1>Zadanie 22 kod: </h1>
+        <textarea readonly rows="40" cols="100"><!DOCTYPE html>
+<html>
+    <head>
+        <title>Zadanie 22</title>
+        <meta charset="UTF-8">
+
+        <script>
+            function pole_galeziowski(a, b){
+                var a_gal = parseFloat(a);
+                var b_gal = parseFloat(b);
+                var pole = a_gal*b_gal;
+                document.getElementById("pokaz_pole").value=pole.toFixed(2)+"cm^2";
+            }
+
+            function obwod_galeziowski(a, b){
+                var a_gal = parseFloat(a);
+                var b_gal = parseFloat(b);
+                var obwod = (a_gal*2)+(b_gal*2);
+                document.getElementById("pokaz_obwod").value=obwod.toFixed(2)+"cm";
+            }
+        </script>
+    </head>
+
+    <body>
+        <form onsubmit="pole_galeziowski(this.a.value,this.b.value); obwod_galeziowski(this.a.value,this.b.value);return false">
+            Podaj a=
+            <input type="text" size="4" name="a">
+            Podaj b=
+            <input typr="text" size="4" name="b">
+            <br><br>
+            <input type="submit" value="Oblicz">
+            <br><br>
+            Pole= <input type="text" readonly id="pokaz_pole" size="7"> Obwód= <input type="text" readonly id="pokaz_obwod" size="4">
+        </form>
+    </body>
+</html></textarea>
+        </center>
+    </body>
+</html>
