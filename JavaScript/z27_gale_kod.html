@@ -8,51 +8,49 @@
         <textarea readonly rows="48" cols="100"><!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<title>Obliczanie wysokości i kąta samolotu</title>
+    <meta charset="UTF-8">
+    <title>Zadanie 27</title>
 </head>
 <body>
 
-<h2>Obliczanie wysokości i kąta startu samolotu</h2>
-
-<form id="samolotForm">
-    Odległość Artura od Dawida: <input type="number" id="odl_gal" step="any" required><br><br>
-    Droga przebyta przez samolot nad Dawidem: <input type="number" id="s_gal" step="any" required><br><br>
-    <button type="button" onclick="oblicz()">Oblicz</button>
+<form onsubmit="oblicz(); return false;">
+  Odległość Artura od Dawida: <input type="text" id="odl_gale" size="4"><br>
+  Droga przebyta przez samolot nad Dawidem: <input type="text" id="s_gale" size="4"><br><br>
+  <input type="submit" value="oblicz"><br><br>
+  Wysokość = <input type="text" readonly id="wysokosc" size="6"><br>
+  Kąt = <input type="text" readonly id="kat" size="6"><br>
 </form>
 
-<h3>Wyniki:</h3>
-<p id="wynik"></p>
-
 <script>
-// Gałęziowski Przemysław 2P
-function obliczWysokosc(odl_gal, kat_rad) {
-    return odl_gal * Math.tan(kat_rad);
-}
-
-
-function obliczKat(odl_gal, s_gal) {
-    let kat_rad = Math.atan(s_gal / odl_gal);
-    return kat_rad * 180 / Math.PI;
-}
-
 function oblicz() {
-    const odl_gal = parseFloat(document.getElementById('odl_gal').value);
-    const s_gal = parseFloat(document.getElementById('s_gal').value);
+    let odl_gale = parseFloat(document.getElementById("odl_gale").value);
+    let s_gale = parseFloat(document.getElementById("s_gale").value);
 
-    const kat_gal = obliczKat(odl_gal, s_gal);
-    const kat_rad = kat_gal * Math.PI / 180;
-    const h_gal = obliczWysokosc(odl_gal, kat_rad);
+    if (isNaN(odl_gale) || isNaN(s_gale) || s_gale <= odl_gale) {
+      alert("Podaj poprawne dane (s > odl).");
+      return;
+    }
 
-    document.getElementById('wynik').innerHTML =
-        `Wysokość samolotu nad Dawidem: ${h_gal.toFixed(2)}<br>` +
-        `Kąt startu samolotu: ${kat_gal.toFixed(2)}°`;
-}
+    let kat = Kat(s_gale, odl_gale);
+    let h = Wys(s_gale, kat);
+
+    document.getElementById("kat").value = kat.toFixed(2);
+    document.getElementById("wysokosc").value = h.toFixed(2);
+    }
+
+    function Kat(s_gale, odl_gale) {
+      return Math.asin(odl_gale / s_gale) * 180 / Math.PI;
+    }
+
+    function Wys(s_gale, kat) {
+      return s_gale * Math.sin(kat * Math.PI / 180);
+    }
+    // Przemysław Gałęziowski 2P
 </script>
-
 </body>
 </html>
 </textarea>
         </center>
     </body>
+
 </html>
