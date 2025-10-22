@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<title>Trapez równoramienny</title>
+    <meta charset="UTF-8">
+    <title>Zadanie 26</title>
 </head>
-<body style="color: blue; font-size: 20px;">
+<body>
 
-<h2>Oblicz pole i obwód trapezu równoramiennego</h2>
+<form onsubmit="Pow_galeziowski(); Obw_galeziowski(); return false">
 
-<form>
-  Górna podstawa (a): <input type="number" id="a"><br><br>
-  Dolna podstawa (b): <input type="number" id="b"><br><br>
-  Wysokość (h): <input type="number" id="h"><br><br>
-  <input type="button" value="Oblicz" onclick="oblicz()">
+    górna podstawa=<input type="text" id="gora" size="8"><br><br><br>
+    dolna podstawa=<input type="text" id="dol" size="8"><br><br><br>
+    wysokość=<input type="text" id="wysokosc" size="8"><br><br><br>
+    <input type="submit" value="oblicz"><br><br>
+    pole=<input type="text" readonly id="pole" size="5"><br><br>
+    obwód=<input type="text" readonly id="obwod" size="5"><br><br>
 </form>
 
 <script>
-// Przemysław Gałeziowski 2P
 
-function Pow_galeziowski(a, b, h) {
-  return ((a + b) * h) / 2;
+function Pow_galeziowski() {
+    let a = parseFloat(document.getElementById("gora").value);
+    let b = parseFloat(document.getElementById("dol").value);
+    let h = parseFloat(document.getElementById("wysokosc").value);
+
+    if (isNaN(a) || isNaN(b) || isNaN(h)) return;
+    document.getElementById("pole").value = (((a + b) * h) / 2).toFixed(2);
 }
 
-function Obw_galeziowski(a, b, h) {
-  let r = Math.abs(a - b) / 2;
-  let ramie = Math.sqrt(Math.pow(r, 2) + Math.pow(h, 2));
-  return a + b + 2 * ramie;
+
+
+function Obw_galeziowski() {
+    let a = parseFloat(document.getElementById("gora").value);
+    let b = parseFloat(document.getElementById("dol").value);
+    let h = parseFloat(document.getElementById("wysokosc").value);
+
+    if (isNaN(a) || isNaN(b) || isNaN(h)) return;
+
+    let r = Math.abs(a - b) / 2; 
+
+    let ramie = Math.sqrt(Math.pow(r, 2) + Math.pow(h, 2));
+
+    document.getElementById("obwod").value = (a + b + 2 * ramie).toFixed(2);
 }
 
-function oblicz() {
-  let a = parseFloat(document.getElementById("a").value);
-  let b = parseFloat(document.getElementById("b").value);
-  let h = parseFloat(document.getElementById("h").value);
+// Przemysław Gałęziowski 2P
 
-  let pole = Pow_galeziowski(a, b, h);
-  let obwod = Obw_galeziowski(a, b, h);
-
-  document.write("a=" + a + "[j]<br>");
-  document.write("b=" + b + "[j]<br>");
-  document.write("h=" + h + "[j]<br>");
-  document.write("Pole=" + pole.toFixed(2) + "[j²]<br>");
-  document.write("Obwód=" + obwod.toFixed(2) + "[j]");
-}
 </script>
-
 </body>
 </html>
